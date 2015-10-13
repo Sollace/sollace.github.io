@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js" id="jquery" ></script>
+	</head>
+	<body class="testBody">
+		<div class="timer">
+			<span class="count hours">0</span><span class="letter">h</span> <span class="count minutes">0</span><span class="letter">m</span> <span class="count seconds">0</span><span class="letter">s<span>
+		</div>
+		<script>
+setInterval(function() {
+  ha();
+}, 1000);
+
+var timer = {
+  hours: 0,
+  minutes: 0,
+  seconds: 0
+};
+
+$('.testBody span').click(function() {
+  timer[$(this).text('0').attr('class')] = 0;
+});
+
+function ha() {
+  if (++timer.seconds >= 60) {
+    timer.seconds = 0;
+    if (++timer.minutes >= 60) {
+      timer.minutes = 0;
+      ++timer.hours;
+      change('hours');
+    }
+    change('minutes');
+  }
+  change('seconds');
+}
+
+function change(name) {
+  $('.' + name).text(timer[name]);
+  $('.' + name + ',.' + name + ' + .letter').css('opacity', '1');
+}
+		</script>
+		<style>
+.testBody {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.testBody span {
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.testBody span.count {
+  padding: 5px;
+  margin: 5px;
+  font-size: 50px;
+  border: solid #fff 5px;
+  border-radius: 100%;
+  background: rgba(255,255,255,0.3);
+  min-width: 60px;
+  display: inline-block;
+  text-shadow: 0px 1px 10px #000;
+  cursor: pointer;
+}
+.testBody span.count:hover {
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(255,255,255,0.6);
+}
+span.hours {
+  color: #f44;
+}
+span.minutes {
+  color: #4f4;
+}
+span.seconds {
+  color: #44f;
+}
+		</style>
+	</body>
+</html>
