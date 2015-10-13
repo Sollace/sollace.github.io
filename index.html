@@ -18,7 +18,7 @@ var timer = {
 };
 
 $('.testBody span').click(function() {
-  timer[$(this).text('0').attr('class')] = 0;
+  timer[$(this).text('0').attr('class').replace('count ','')] = 0;
 });
 
 function ha() {
@@ -41,6 +41,7 @@ function change(name) {
 		</script>
 		<style>
 .testBody {
+  background: url("resources/pinkie.png") fixed no-repeat bottom right 30px / 70px auto #000;
   color: #fff;
   font-weight: bold;
   text-align: center;
