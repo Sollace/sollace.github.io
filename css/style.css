@@ -5,7 +5,7 @@
   text-align: center;
 }
 .testBody span {
-  opacity: 0;
+  display: none;
   transition: all 0.4s ease;
 }
 .testBody span.count {
@@ -16,7 +16,6 @@
   border-radius: 100%;
   background: rgba(255,255,255,0.3);
   min-width: 60px;
-  display: inline-block;
   text-shadow: 0px 1px 10px #000;
   cursor: pointer;
 }

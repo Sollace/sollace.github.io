@@ -28,6 +28,6 @@
 
   function change(name) {
     $('.' + name).text(timer[name]);
-    $('.' + name + ',.' + name + ' + .letter').css('opacity', '1');
+    $('.' + name + ',.' + name + ' + .letter').css('display', 'inline-block');
   }
 })();
