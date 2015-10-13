@@ -9,7 +9,7 @@
     seconds: 0
   };
   
-  $('.testBody span').click(function() {
+  $('.timer span.count').click(function() {
     timer[$(this).text('0').attr('class').replace('count ','')] = 0;
   });
   
