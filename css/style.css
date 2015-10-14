@@ -26,6 +26,11 @@
   display: none;
   transition: all 0.4s ease;
 }
+.timer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
 .testBody span.count {
   padding: 5px;
   margin: 5px;
