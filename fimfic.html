@@ -22,8 +22,8 @@ var id = 0;
 if (document.location.href.indexOf('?') != -1) {
   id = document.location.href.split('?')[1].split('&');
   for (i = 0; i < id.length; i++) {
-     if (i.indexOf('id=') == 0) {
-        visitUser(i.split('=')[1]);
+     if (id[i].indexOf('id=') == 0) {
+        visitUser(id[i].split('=')[1]);
         return;
      }
   }
