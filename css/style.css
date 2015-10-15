@@ -15,14 +15,13 @@
   right: 0px;
   opacity: 0.3;
 }
-.pinkie::after {
+.pinkie .text {
   display: block;
   width: 100%;
-  content: 'loading...';
   position: fixed;
   top: 75%;
 }
-.testBody span {
+.timer span {
   display: none;
   transition: all 0.4s ease;
 }
