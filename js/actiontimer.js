@@ -44,6 +44,7 @@
     if (backgroundWidth >= 100 && direction > 0) {
       direction = -direction;
       $('.testBody').css('background-color', colours());
+      $('.testBody').addClass('coloured');
     }
     if (backgroundWidth <= 0 && direction < 0) direction = -direction;
   }

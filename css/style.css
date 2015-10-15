@@ -1,13 +1,17 @@
 .testBody {
-  background: #000;
+  background: #f1f1f1;
   transition: background 3s linear;
-  color: #fff;
+  color: #000;
+  text-shadow: 0px 1px 3px #fff;
   font-weight: bold;
   text-align: center;
 }
+.testBody.coloured {
+  color: #fff;
+  text-shadow: 0px 1px 3px #000;
+}
 .pinkie {
   background: url(../resources/pinkie.png) fixed no-repeat center center / 30% auto;
-  transition: all 1s linear;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -23,14 +27,15 @@
 }
 .timer span {
   display: none;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease, color 2s linear;
 }
 .timer {
   position: absolute;
   left: 0px;
   right: 0px;
 }
-.testBody span.count {
+span.count {
+  position: relative;
   padding: 5px;
   margin: 5px;
   font-size: 50px;
@@ -38,19 +43,25 @@
   border-radius: 100%;
   background: rgba(255,255,255,0.3);
   min-width: 60px;
-  text-shadow: 0px 1px 10px #000;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+  box-shadow: 0px 0px 0px 1px #ccc, 0px 0px 20px 0px rgba(0,0,0,0.3) inset;
+  box-sizing: content-box;
   cursor: pointer;
+  color: rgba(0,0,0,0.3);
 }
-.testBody span.count:hover {
-  background: rgba(255,255,255,0.35);
-  border-color: rgba(255,255,255,0.6);
+span.count:hover {
+  box-shadow: 0px 0px 0px 1px #ccc, 0px 0px 10px 0px rgba(0,0,0,0.3) inset;
 }
-span.hours {
-  color: #f44;
+span.count::after {
+  display: inline-block;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  font-size: 20px;
 }
-span.minutes {
-  color: #4f4;
-}
-span.seconds {
-  color: #44f;
-}
+/*span.hours {color: #f66;}
+span.minutes {color: #3e3;}
+span.seconds {color: #33e;}*/
+span.hours::after {content: 'h';}
+span.minutes::after {content: 'm';}
+span.seconds::after {content: 's';}
