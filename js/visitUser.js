@@ -1,5 +1,5 @@
 function visitUser(id) {
-  var proto = document.location.protocol;
+  var proto = document.location.protocol == 'https:' ? 'https:' : 'http:';
   var domain = '//www.fimfiction.net';
   $.ajax({
     method: 'GET',
@@ -15,11 +15,11 @@ function visitUser(id) {
         }
         document.location.href = proto + url;
       } else {
-        alert('error');
+        $('.pinkie .text').text('Error: Requested user was not found');
       }
     },
     'error': function(e) {
-      alert('error: ' + JSON.stringify(e));
+      $('.pinkie .text').text('Error: Could not contact "' + proto + domain + '"');
     }
   });
 }
