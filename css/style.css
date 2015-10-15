@@ -11,7 +11,7 @@
   text-shadow: 0px 1px 3px #000;
 }
 .pinkie {
-  background: url(../resources/pinkie.png) fixed no-repeat center center / 30% auto;
+  background: url(../images/pinkie.png) fixed no-repeat center center / 30% auto;
   position: fixed;
   top: 0px;
   bottom: 0px;
