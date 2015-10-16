@@ -12,30 +12,35 @@
   
   var direction = 5;
   var backgroundWidth = 0;
-  var timer = {
+  var timer = window['timer'] ? window['timer'] : {
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
+    tick: function(callback) {
+       if (++this.seconds >= 60) {
+         this.seconds = 0;
+         if (++this.minutes >= 60) {
+           this.minutes = 0;
+           ++this.hours;
+           callback('hours');
+         }
+         callback('minutes');
+       }
+       callback('seconds');
+    }
   };
   
   setInterval(timerEnabled ? ha : bouncePinkie, 1000);
   if (timerEnabled) {
-    $('.timer span.count').click(function() {
-      timer[$(this).text('0').attr('class').replace('count ','')] = 0;
-    });
+    if (!timer.init || !timer.init(change)) {
+      $('.timer span.count').click(function() {
+        timer[$(this).text('0').attr('class').replace('count ','')] = 0;
+      });
+    }
   }
   
   function ha() {
-    if (++timer.seconds >= 60) {
-      timer.seconds = 0;
-      if (++timer.minutes >= 60) {
-        timer.minutes = 0;
-        ++timer.hours;
-        change('hours');
-      }
-      change('minutes');
-    }
-    change('seconds');
+    timer.tick(change);
     bouncePinkie();
   }
 

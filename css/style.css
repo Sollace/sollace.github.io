@@ -29,6 +29,14 @@
   display: none;
   transition: all 0.4s ease, color 2s linear;
 }
+.timer, .pinkie {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .timer {
   position: absolute;
   left: 0px;

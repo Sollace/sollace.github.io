@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title id="document_title">Timer</title>
+		<title id="document_title">Clock</title>
 		<script src="https://code.jquery.com/jquery-1.8.3.min.js" id="jquery" ></script>
 		<link type="text/css" href="css/style.css" rel="stylesheet" />
 	</head>
@@ -10,6 +10,38 @@
 			<span class="count hours">0</span>
 			<span class="count minutes">0</span>
 			<span class="count seconds">0</span>
+			<script>
+var date = new Date();
+var timer = {
+  hours: date.getHours(),
+  minutes: date.getMinutes(),
+  seconds: date.getSeconds(),
+  init: function(callback) {
+    callback('hours');
+    callback('minutes');
+    callback('seconds');
+    return true;
+  },
+  tick: function(callback) {
+     date = new Date();
+     var now = date.getSeconds();
+     if (now != this.seconds) {
+        this.seconds = now;
+        callback('seconds');
+     }
+     now = date.getMinutes();
+     if (now != this.minutes) {
+        this.minutes = now;
+        callback('minutes');
+     }
+     now = date.getHours();
+     if (now != this.hours) {
+        this.hours = now;
+        callback('hours');
+     }
+  }
+};
+			</script>
 			<script src="js/actiontimer.js" ></script>
 		</div>
 	</body>
