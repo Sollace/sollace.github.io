@@ -10,20 +10,40 @@
   color: #fff;
   text-shadow: 0px 1px 3px #000;
 }
-.pinkie {
-  background: url(../images/pinkie.png) fixed no-repeat center center / 30% auto;
+.pinkie, .pinkie::before, .pinkie .splurge {
   position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+.pinkie::before, .pinkie .splurge {
+  background: url(../images/pinkie.png) fixed no-repeat center center / auto 40%;
+}
+.pinkie::before {
+  content: '';
   opacity: 0.3;
 }
+.pinkie .splurge {
+  -webkit-animation: fillup 150s linear 0s forwards;
+  -moz-animation: fillup 150s linear 0s forwards;
+  -o-animation: fillup 150s linear 0s forwards;
+  animation: fillup 150s linear 0s forwards;
+  top: 70%;
+  bottom: 30%;
+}
+
+@-webkit-keyframes fillup { from { top: 70%; } to { top: 35%; } }
+@-moz-keyframes fillup { from { top: 70%; } to { top: 35%; } }
+@-o-keyframes fillup { from { top: 70%; } to { top: 35%; } }
+@keyframes fillup { from { top: 70%; } to { top: 35%; } }
+
 .pinkie .text {
   display: block;
   width: 100%;
   position: fixed;
   top: 75%;
+  opacity: 0.3;
 }
 .timer span {
   display: none;
