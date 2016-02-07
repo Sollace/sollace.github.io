@@ -1,0 +1,48 @@
+#screen {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: #000;
+   overflow-y: auto;
+   text-shadow: none;
+   text-align: left;
+   color: #eee;
+   white-space: pre-wrap;
+}
+#screen .input, #screen .editor {
+   display: block;
+   position: relative;
+   width: 100%;
+}
+#screen .input {
+   height: calc(100% - 2em);
+}
+#screen .editor, #screen .editor textarea {
+   display: inline-block;
+   min-height: 5em;
+   
+   overflow: auto;
+}
+#screen textarea {
+   background: none;
+   border: none;
+   color: #eee;
+   position: absolute;
+   top: 0px;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: inherit;
+   font-weight: inherit;
+   font-size: inherit;
+   text-indent: 1em;
+   resize: none;
+}
+
+#screen .input::before {
+   content: '>';
+}

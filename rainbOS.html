@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title id="document_title">RainbOS</title>
+		<link rel="icon" sizes="160x160" href="images/favicon.png">
+		<script src="js/jquery-1.8.3.min.js" id="jquery" ></script>
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+	</head>
+	<body class="testBody">
+		<div class="body-container">
+			<div class="pinkie loader" >
+                <span class="splurge"></span>
+                <span class="text">loading...</span>
+            </div>
+			<div class="os" style="display:none">
+				<div id="leftBar" class="settings-popout">
+					<div class="user_info">
+						<div class="avatar-wrapper">
+                            <div id="avatar-selector" >
+                                <div class="avatar-wrapper">
+                                    <div class="avatar fade-target" ></div>
+                                </div>
+                                <div class="selections">
+                                    <ul>
+                                        <li><div class="avatar" style="background-image:url(images/favicon.png);"></div></li>
+                                        <li><div class="avatar" style="background-image:url(images/favicon.png);"></div></li>
+                                        <li><div class="avatar" style="background-image:url(images/favicon.png);"></div></li>
+                                        <li><div class="avatar" style="background-image:url(images/favicon.png);"></div></li>
+                                        <li><div class="avatar" style="background-image:url(images/favicon.png);"></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+						</div>
+						<div class="editable username">Anon Derpy</div>
+					</div>
+                    <ul class="options bottom">
+                        <li class="option clock">
+                            <table class="resizeable" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <td class="label time timer" colspan="7">
+                                            <span class="count hours" data-max="12" data-len="2">9</span>
+                                            <span class="label">:</span>
+                                            <span class="count minutes" data-max="59" data-len="2">13</span>
+                                            <span class="am" data-options="AM;PM" data-len="2">AM</span>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="prev optional">&lt;&lt;</td>
+                                        <td colspan="5" class="month">
+                                            <span class="label">Calisorn</span>
+                                        </td>
+                                        <td class="next optional">&gt;&gt;</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="days optional">
+                                    <tr class="row last">
+                                        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <script>
+                                $('tfoot.days td').each(function() {
+                                    $(this).html('<span class="label">' + $(this).html() + '</span>');
+                                });
+                            </script>
+                        </li>
+                        <div class="option power">
+                            <table cellspacing="0">
+                                <tbody>
+                                    <tr class="col-left">
+                                        <td class="power-button" width="50%" rowspan="3">
+                                            <i class="fa fa-power" ></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="restart">
+                                            <span class="label">Restart</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sleep">
+                                            <span class="label">Sleep</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <li class="option fullscreen">
+                            <span class="label">Toggle Fullscreen</span>
+                        </li>
+                    </ul>
+				</div>
+				<div id="controls" >
+					<ul class="controls">
+						<li id="options" class="menuItem" >
+                            <div class="timer label">
+                                <span class="count hours">0</span>
+                                <span class="count minutes">0</span>
+                                <script>
+var date = new Date();
+var timer = {
+  interval: 60000,
+  hours: date.getHours(),
+  minutes: date.getMinutes(),
+  seconds: date.getSeconds(),
+  init: function(callback) {
+    callback('hours');
+    callback('minutes');
+    callback('seconds');
+    return true;
+  },
+  tick: function(callback) {
+     date = new Date();
+     var now = date.getSeconds();
+     if (now != this.seconds) {
+        this.seconds = now;
+        callback('seconds');
+     }
+     now = date.getMinutes();
+     if (now != this.minutes) {
+        this.minutes = now;
+        callback('minutes');
+     }
+     now = date.getHours();
+     if (now != this.hours) {
+        this.hours = now;
+        callback('hours');
+     }
+  }
+};
+                                </script>
+                                <script src="js/actiontimer.js" ></script>
+                            </div>
+                        </li>
+					</ul>
+				</div>
+				<div id="desktop" ></div>
+				<div id="apps_deck" >
+					<span class="dock left" ></span>
+					<div title="Start" class="app" id="primary" ></div>
+					<span class="dock right" ></span>
+				</div>
+				<div id="screen" ></div>
+			</div>
+		</div>
+	</body>
+	<script src="rainbOS/shell/shell.js" id="shell" ></script>
+	<script src="rainbOS/shell/drive.js" ></script>
+	<script src="rainbOS/ui.js" ></script>
+	<link type="text/css" href="rainbOS/shell.css" rel="stylesheet" />
+	<link type="text/css" href="rainbOS/interface.css" rel="stylesheet" />
+	<script>
+		$('.loader').remove();
+		$('.os').css('display','');
+	</script>
+</html>

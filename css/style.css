@@ -45,11 +45,11 @@
   top: 75%;
   opacity: 0.3;
 }
-.timer span {
+.timer.skinned span {
   display: none;
   transition: all 0.4s ease, color 2s linear;
 }
-.timer, .pinkie {
+.timer.skinned, .pinkie {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -57,12 +57,12 @@
   -ms-user-select: none;
   user-select: none;
 }
-.timer {
+.timer.skinned {
   position: absolute;
   left: 0px;
   right: 0px;
 }
-span.count {
+.timer.skinned span.count {
   position: relative;
   padding: 5px;
   margin: 5px;
@@ -77,19 +77,19 @@ span.count {
   cursor: pointer;
   color: rgba(0,0,0,0.3);
 }
-span.count:hover {
+.timer.skinned span.count:hover {
   box-shadow: 0px 0px 0px 1px #ccc, 0px 0px 10px 0px rgba(0,0,0,0.3) inset;
 }
-span.count::after {
+.timer.skinned span.count::after {
   display: inline-block;
   position: absolute;
   bottom: -5px;
   right: -5px;
   font-size: 20px;
 }
-/*span.hours {color: #f66;}
-span.minutes {color: #3e3;}
-span.seconds {color: #33e;}*/
-span.hours::after {content: 'h';}
-span.minutes::after {content: 'm';}
-span.seconds::after {content: 's';}
+/*.timer.skinned span.hours {color: #f66;}
+.timer.skinned span.minutes {color: #3e3;}
+.timer.skinned span.seconds {color: #33e;}*/
+.timer.skinned span.hours::after {content: 'h';}
+.timer.skinned span.minutes::after {content: 'm';}
+.timer.skinned span.seconds::after {content: 's';}

@@ -10,9 +10,8 @@
     }
   })();
   
-  var direction = 5;
-  var backgroundWidth = 0;
-  var timer = window['timer'] ? window['timer'] : {
+  var timer = window['timer'] || {
+    interval: 1000,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -30,7 +29,7 @@
     }
   };
   
-  setInterval(timerEnabled ? ha : bouncePinkie, 1000);
+  setInterval(timerEnabled ? ha : fade, timer.interval);
   if (timerEnabled) {
     if (!timer.init || !timer.init(change)) {
       $('.timer span.count').click(function() {
@@ -38,20 +37,29 @@
       });
     }
   }
+  updateAM();
   
   function ha() {
     timer.tick(change);
-    bouncePinkie();
+    updateAM();
+    fade();
+  }
+  
+  function updateAM() {
+    var am = $('.time .am');
+    if (am.length) {
+        var neu = timer.hours > 12 ? 'PM' : 'AM';
+        am.each(function() {
+            if ($(this).text().toUpperCase() != neu) $(this).text(neu);
+        });
+    }
   }
 
-  function bouncePinkie() {
-    backgroundWidth += direction;
-    if (backgroundWidth >= 100 && direction > 0) {
-      direction = -direction;
-      $('.testBody').css('background-color', colours());
-      $('.testBody').addClass('coloured');
+  function fade() {
+    if (Math.random() * 20 < 15) {
+        $('.fade-target').css('background-color', colours());
+        $('.fade-target').addClass('coloured');
     }
-    if (backgroundWidth <= 0 && direction < 0) direction = -direction;
   }
 
   function change(name) {
