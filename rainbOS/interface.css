@@ -411,13 +411,15 @@
   padding-left: 0.15em;
   width: 3em;
   height: 5em;
-  margin: 3px;
-  overflow: hidden;
+  margin: 5px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  box-sizing: content-box;
 }
 .icon-grid > .icon:hover, .icon-grid > .icon.selected {
   border: solid 3px rgba(0,0,255,0.05);
   border-radius: 3px;
-  margin: 0;
+  margin: 2px;
 }
 
 .icon-grid > .icon.selected {
@@ -464,13 +466,15 @@
   background: red;
 }
 .icon-grid .icon.folder .app::after {
+  width: 0px;
+  height: 0px;
   content: '';
   display: block;
   position: absolute;
   top: -0.5em;
-  right: 50%;
+  right: 49%;
   color: #aaa;
-  border: solid 0.25em;
+  border: solid 0.5em;
   border-color: transparent red red transparent;
 }
 

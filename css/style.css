@@ -1,12 +1,9 @@
-.testBody {
-  background: #f1f1f1;
+.fade-target {
   transition: background 3s linear;
-  color: #000;
   text-shadow: 0px 1px 3px #fff;
   font-weight: bold;
-  text-align: center;
 }
-.testBody.coloured {
+body.coloured {
   color: #fff;
   text-shadow: 0px 1px 3px #000;
 }
@@ -66,14 +63,15 @@
   position: relative;
   padding: 5px;
   margin: 5px;
-  font-size: 50px;
+  font-size: 3em;
+  line-height: 1.5em;
   border: solid #fff 5px;
   border-radius: 100%;
   background: rgba(255,255,255,0.3);
-  min-width: 60px;
+  min-width: 2em;
+  height: 2em;
   text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
   box-shadow: 0px 0px 0px 1px #ccc, 0px 0px 20px 0px rgba(0,0,0,0.3) inset;
-  box-sizing: content-box;
   cursor: pointer;
   color: rgba(0,0,0,0.3);
 }
@@ -83,13 +81,11 @@
 .timer.skinned span.count::after {
   display: inline-block;
   position: absolute;
-  bottom: -5px;
+  bottom: -1em;
   right: -5px;
   font-size: 20px;
 }
-/*.timer.skinned span.hours {color: #f66;}
-.timer.skinned span.minutes {color: #3e3;}
-.timer.skinned span.seconds {color: #33e;}*/
+
 .timer.skinned span.hours::after {content: 'h';}
 .timer.skinned span.minutes::after {content: 'm';}
 .timer.skinned span.seconds::after {content: 's';}
