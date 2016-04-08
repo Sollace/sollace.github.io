@@ -240,3 +240,7 @@ img.emoticon {
 .left {
     float: left;
 }
+
+.small {
+    font-size: 25%;
+}
