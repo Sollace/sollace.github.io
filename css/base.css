@@ -114,7 +114,7 @@ header ul li::after {
 }
 #banner {
     height: 200px;
-    background: url(../images/banner.png) center;
+    background: url(../images/banner.png) center #fff;
     background-size: cover;
 }
 #banner .title {
