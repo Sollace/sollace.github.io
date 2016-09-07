@@ -1,13 +1,15 @@
 /*
 http://i.imgur.com/JNuD8Oh.png
 Mixed in some elements from the old style and fixed the main things that bug me.
+
+Update 1: Added more tag colours
 */
 
 @-moz-document
   domain(derpibooru.org),
   domain(derpiboo.ru),
   domain(trixiebooru.org) {
-    /*these class names are atrocious*/
+
     .block__header, a.block__header--single-link {
       background: #6eaede;
       color: #fff;
@@ -75,6 +77,22 @@ Mixed in some elements from the old style and fixed the main things that bug me.
     }
     span.tag.tag-ns-artist a, span.tag.tag-ns-editor a, span.tag[data-tag-slug="edit"] a, span.tag[data-tag-slug="anonymous+artist"] a {
       color: #363b74;
+    }
+    
+    span.tag.tag-ns-spoiler {
+      background:#f8d2c0;
+      border-color:#e97136
+    }
+    span.tag.tag-ns-spoiler a {
+      color:#e97136
+    }
+
+    span.tag[data-tag-slug="artist+needed"] {
+      background:#ea7b89;
+      border-color:#b01c2e
+    }
+    span.tag[data-tag-slug="artist+needed"] a {
+      color:#b01c2e
     }
 
     /*I'm too lazy to find the other tag colours...*/
