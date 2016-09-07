@@ -1,0 +1,81 @@
+/*
+http://i.imgur.com/JNuD8Oh.png
+Mixed in some elements from the old style and fixed the main things that bug me.
+*/
+
+@-moz-document
+  domain(derpibooru.org),
+  domain(derpiboo.ru),
+  domain(trixiebooru.org) {
+    /*these class names are atrocious*/
+    .block__header, a.block__header--single-link {
+      background: #6eaede;
+      color: #fff;
+    }
+    .block__header--light, .block__header--js-tabbed {
+      background: #83bae3;
+      color: #fff;
+    }
+    .block__header a, a.block__header--single-link {
+      color: #fff;
+    }
+    .block__header > span {
+      font-weight: bold; /*consistency damnit*/
+    }
+    .block__header a {
+      background: #519ed7;
+      margin-left: 4px;
+      padding: 4px;
+      line-height: 13px;
+      transition: background .1s linear, color .1s linear;
+    }
+    .page-current {
+      padding: 4px; /*et tu, Brute?*/
+    }
+    .block__header a, a.block__header--single-link,
+    .block__header--js-tabbed a:last-child {
+      border: none !important; /*borderless borders wat*/
+    }
+
+    .block__header a.selected:hover,
+    .block__header a.selected {
+      background: #d1dfe9;
+      color: #396f97;
+    }
+
+    .media-box__header,
+    .media-box__header a {
+      line-height: 13px;
+      font-size: 10px;
+    }
+
+
+    span.tag {
+      color: #333;
+      background: #cde69a;
+      border-color: #9ecf3c;
+    }
+    span.tag a {
+      color: #82ad2b;
+    }
+
+
+    span.tag.tag-system {
+      background: #b1cee2;
+      border-color: #4c90bd;
+    }
+    span.tag.tag-system a {
+      color: #4c90bd;
+    }
+
+
+    span.tag.tag-ns-artist, span.tag.tag-ns-editor, span.tag[data-tag-slug="edit"], span.tag[data-tag-slug="anonymous+artist"] {
+      background: #a2a6d4;
+      border-color: #363b74;
+    }
+    span.tag.tag-ns-artist a, span.tag.tag-ns-editor a, span.tag[data-tag-slug="edit"] a, span.tag[data-tag-slug="anonymous+artist"] a {
+      color: #363b74;
+    }
+
+    /*I'm too lazy to find the other tag colours...*/
+}
