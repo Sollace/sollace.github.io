@@ -1,0 +1,47 @@
+/*
+For people who dislike the facebook bar. Removes it and brings back a bit of the appearance of the old style.
+*/
+
+@-moz-document
+  domain(derpibooru.org),
+  domain(derpiboo.ru),
+  domain(trixiebooru.org) {
+    .header {
+      background: none;
+      margin-bottom: 30px;
+    }
+    .header--secondary {
+      background: #e2ebf2;
+    }
+    .header--secondary .flex-row {
+      display: block;
+    }
+    .flex-row > a.header__link {
+      background: none;
+      color: #000;
+    }
+    .header--secondary a.header__link {
+      background: #e2ebf2;
+    }
+    .header .flex-row__right {
+      background: #3d92d0;
+    }
+    #sbq, a.header__search__button, button.header__search__button {
+      background-color: #e2ebf2;
+      color: #000;
+      fill: #000;
+    }
+    #sbq:focus, a.header__search__button:hover, button.header__search__button:hover,
+    .header--secondary a.header__link:hover {
+      background-color: #cadae6;
+    }
+    .header__search i.fa-embedded--help {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMDg4IDEyNTZ2MjQwcTAgMTYtMTIgMjh0LTI4IDEyaC0yNDBxLTE2IDAtMjgtMTJ0LTEyLTI4di0yNDBxMC0xNiAxMi0yOHQyOC0xMmgyNDBxMTYgMCAyOCAxMnQxMiAyOHptMzE2LTYwMHEwIDU0LTE1LjUgMTAxdC0zNSA3Ni41LTU1IDU5LjUtNTcuNSA0My41LTYxIDM1LjVxLTQxIDIzLTY4LjUgNjV0LTI3LjUgNjdxMCAxNy0xMiAzMi41dC0yOCAxNS41aC0yNDBxLTE1IDAtMjUuNS0xOC41dC0xMC41LTM3LjV2LTQ1cTAtODMgNjUtMTU2LjV0MTQzLTEwOC41cTU5LTI3IDg0LTU2dDI1LTc2cTAtNDItNDYuNS03NHQtMTA3LjUtMzJxLTY1IDAtMTA4IDI5LTM1IDI1LTEwNyAxMTUtMTMgMTYtMzEgMTYtMTIgMC0yNS04bC0xNjQtMTI1cS0xMy0xMC0xNS41LTI1dDUuNS0yOHExNjAtMjY2IDQ2NC0yNjYgODAgMCAxNjEgMzF0MTQ2IDgzIDEwNiAxMjcuNSA0MSAxNTguNXoiIGZpbGw9IiMwMDAiLz48L3N2Zz4=);
+    }
+    .header__search i.fa-embedded--camera {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik04OTYgNjcycTExOSAwIDIwMy41IDg0LjV0ODQuNSAyMDMuNS04NC41IDIwMy41LTIwMy41IDg0LjUtMjAzLjUtODQuNS04NC41LTIwMy41IDg0LjUtMjAzLjUgMjAzLjUtODQuNXptNzA0LTQxNnExMDYgMCAxODEgNzV0NzUgMTgxdjg5NnEwIDEwNi03NSAxODF0LTE4MSA3NWgtMTQwOHEtMTA2IDAtMTgxLTc1dC03NS0xODF2LTg5NnEwLTEwNiA3NS0xODF0MTgxLTc1aDIyNGw1MS0xMzZxMTktNDkgNjkuNS04NC41dDEwMy41LTM1LjVoNTEycTUzIDAgMTAzLjUgMzUuNXQ2OS41IDg0LjVsNTEgMTM2aDIyNHptLTcwNCAxMTUycTE4NSAwIDMxNi41LTEzMS41dDEzMS41LTMxNi41LTEzMS41LTMxNi41LTMxNi41LTEzMS41LTMxNi41IDEzMS41LTEzMS41IDMxNi41IDEzMS41IDMxNi41IDMxNi41IDEzMS41eiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==);
+    }
+    .header__search i.fa-embedded--search {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMjE2IDgzMnEwLTE4NS0xMzEuNS0zMTYuNXQtMzE2LjUtMTMxLjUtMzE2LjUgMTMxLjUtMTMxLjUgMzE2LjUgMTMxLjUgMzE2LjUgMzE2LjUgMTMxLjUgMzE2LjUtMTMxLjUgMTMxLjUtMzE2LjV6bTUxMiA4MzJxMCA1Mi0zOCA5MHQtOTAgMzhxLTU0IDAtOTAtMzhsLTM0My0zNDJxLTE3OSAxMjQtMzk5IDEyNC0xNDMgMC0yNzMuNS01NS41dC0yMjUtMTUwLTE1MC0yMjUtNTUuNS0yNzMuNSA1NS41LTI3My41IDE1MC0yMjUgMjI1LTE1MCAyNzMuNS01NS41IDI3My41IDU1LjUgMjI1IDE1MCAxNTAgMjI1IDU1LjUgMjczLjVxMCAyMjAtMTI0IDM5OWwzNDMgMzQzcTM3IDM3IDM3IDkweiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==);
+    }
+}

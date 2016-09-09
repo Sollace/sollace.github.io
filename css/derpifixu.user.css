@@ -3,6 +3,9 @@ http://i.imgur.com/JNuD8Oh.png
 Mixed in some elements from the old style and fixed the main things that bug me.
 
 Update 1: Added more tag colours
+Update 2: 
+          Added a 10px spacing around the main header and fixed inconsistent sizing (specifically the search bar)
+          Reduced the limit for 'mobile mode' to 500px
 */
 
 @-moz-document
@@ -50,7 +53,45 @@ Update 1: Added more tag colours
       line-height: 13px;
       font-size: 10px;
     }
-
+    
+    .header {
+      /*background: #6eaede;*/
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header .flex-row {
+      padding: 0 10px;
+    }
+    .header.header--secondary {
+      /*background: #e2ebf2;*/
+      padding: 0;
+    }
+    .header__search, .header__input--search,
+    .header__input--search:active, .header__input--search:focus {
+      height: 36px; /*consistency dammit*/
+    }
+    a.header__search__button, button.header__search__button {
+      line-height: 36px; /*consistency dammit*/
+    }
+   /* a.header__link:not(:hover) {
+      background: #6eaede;
+    }
+    .header.header--secondary a {
+      background: #e2ebf2;
+    }
+    span.header__link-user__dropdown-arrow {
+      background-color: transparent;
+    }*/
+    
+    
+    @media(min-width:500px) {
+      .hide-mobile {
+        display: initial !important;
+      }
+      .dropdown:not(:hover) .hide-mobile.dropdown__content {
+        display: none !important;
+      }
+    }
 
     span.tag {
       color: #333;
