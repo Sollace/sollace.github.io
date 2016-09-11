@@ -1,0 +1,42 @@
+/*
+Derpifixu 2 (Dark Version)
+*/
+
+@-moz-document
+  domain(derpibooru.org),
+  domain(derpiboo.ru),
+  domain(trixiebooru.org) {
+    .flex-row > a.header__link,
+    .header {
+      background: none;
+    }
+    .header {
+      margin-bottom: 30px;
+    }
+    
+    /*Master Header*/
+    .flex-row > a.header__link {
+      color: #fff;
+    }
+    /*Minor Header*/
+    .header--secondary {
+      background: #202c40;
+    }
+    .header--secondary a.header__link {
+      background: #202c40;
+    }
+    /*Userbar*/
+    .header .flex-row__right {
+      background: #284371;
+    }
+    /*Search bar*/
+    #sbq, a.header__search__button, button.header__search__button {
+      background-color: #284371;
+      color: #ccc;
+      fill: #ccc;
+    }
+    #sbq:focus, a.header__search__button:hover, button.header__search__button:hover,
+    .header--secondary a.header__link:hover {
+      background-color: #1d3153;
+    }
+}

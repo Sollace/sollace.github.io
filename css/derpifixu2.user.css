@@ -1,31 +1,36 @@
 /*
-For people who dislike the facebook bar. Removes it and brings back a bit of the appearance of the old style.
+Derpifixu 2 (Light Version)
 */
 
 @-moz-document
   domain(derpibooru.org),
   domain(derpiboo.ru),
   domain(trixiebooru.org) {
+    .flex-row > a.header__link,
     .header {
       background: none;
+    }
+    .header {
       margin-bottom: 30px;
     }
-    .header--secondary {
-      background: #e2ebf2;
-    }
-    .header--secondary .flex-row {
-      display: block;
-    }
+    
+    /*Master Header*/
     .flex-row > a.header__link {
       background: none;
       color: #000;
     }
+    /*Minor Header*/
+    .header--secondary {
+      background: #e2ebf2;
+    }
     .header--secondary a.header__link {
       background: #e2ebf2;
     }
+    /*userbar*/
     .header .flex-row__right {
       background: #3d92d0;
     }
+    /*Search bar*/
     #sbq, a.header__search__button, button.header__search__button {
       background-color: #e2ebf2;
       color: #000;

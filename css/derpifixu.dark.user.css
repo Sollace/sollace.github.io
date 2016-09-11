@@ -1,5 +1,5 @@
 /*
-Derpifixu (Light version)
+Derpifixu (Dark version)
 
 http://i.imgur.com/JNuD8Oh.png
 Mixed in some elements from the old style and fixed the main things that bug me.
@@ -8,6 +8,7 @@ Update 1: Added more tag colours
 Update 2: 
           Added a 10px spacing around the main header and fixed inconsistent sizing (specifically the search bar)
           Reduced the limit for 'mobile mode' to 500px
+
 */
 
 @-moz-document
@@ -16,27 +17,27 @@ Update 2:
   domain(trixiebooru.org) {
     /*Header Master*/
     .block__header, a.block__header--single-link {
-      background: #6eaede;
+      background: #284371;
     }
     /*Header Minor*/
     .block__header--light, .block__header--js-tabbed {
-      background: #83bae3;
+      background: #183361;
     }
     /*Header text*/
     .block__header--light, .block__header--js-tabbed,
     .block__header, a.block__header--single-link,
     .block__header a, a.block__header--single-link {
-      color: #fff;
+      color: #ccc;
     }
     /*Header link*/
     .block__header a {
-      background: #519ed7;
+      background: #003;
     }
     /*Header link active*/
     .block__header a.selected:hover,
     .block__header a.selected {
-      background: #d1dfe9;
-      color: #396f97;
+      background: #385381;
+      color: #ccc;
     }
     
     .block__header > span {
@@ -91,18 +92,18 @@ Update 2:
     
     /*Tag generic*/
     span.tag {
-      color: #333;
-      background: #cde69a;
-      border-color: #9ecf3c;
+      color: #ccc;
+      background: #3d560a;
+      border-color: #7eaf1c;
     }
     span.tag a {
       color: #82ad2b;
     }
-
+    
     /*System tags*/
     span.tag.tag-system {
-      background: #b1cee2;
-      border-color: #4c90bd;
+      background: #213e52;
+      border-color: #2c70ad;
     }
     span.tag.tag-system a {
       color: #4c90bd;
@@ -110,11 +111,11 @@ Update 2:
 
     /*Artist Tags*/
     span.tag.tag-ns-artist, span.tag.tag-ns-editor, span.tag[data-tag-slug="edit"], span.tag[data-tag-slug="anonymous+artist"] {
-      background: #a2a6d4;
-      border-color: #363b74;
+      background: #121644;
+      border-color: #464b84;
     }
     span.tag.tag-ns-artist a, span.tag.tag-ns-editor a, span.tag[data-tag-slug="edit"] a, span.tag[data-tag-slug="anonymous+artist"] a {
-      color: #363b74;
+      color: #464b84;
     }
     
     /*Spoiler Tags*/
@@ -128,11 +129,11 @@ Update 2:
     
     /*Artist-needed tag*/
     span.tag[data-tag-slug="artist+needed"] {
-      background:#ea7b89;
-      border-color:#b01c2e
+      background:#6a0b19;
+      border-color:#c02c3e
     }
     span.tag[data-tag-slug="artist+needed"] a {
-      color:#b01c2e
+      color:#c02c3e
     }
 
     /*I'm too lazy to find the other tag colours...*/
