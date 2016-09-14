@@ -8,6 +8,7 @@ Update 1: Added more tag colours
 Update 2: 
           Added a 10px spacing around the main header and fixed inconsistent sizing (specifically the search bar)
           Reduced the limit for 'mobile mode' to 500px
+Update 3: Fixed being unable to read the labels on the tag editor groups.
 */
 
 @-moz-document
@@ -79,7 +80,10 @@ Update 2:
     a.header__search__button, button.header__search__button {
       line-height: 36px; /*consistency dammit*/
     }
-    
+    span.quick-tag-table__tab-separator {
+      background: none;
+      border: none;
+    }
     @media(min-width:500px) {
       .hide-mobile {
         display: initial !important;
