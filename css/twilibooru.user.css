@@ -166,10 +166,10 @@ A Twilight Sparkle theme for derpibooru.
 			border-bottom:1px solid #77b3de
 		}
 		.sparkline .bar {
-			background-color:#ca9756;  
+			background-color:#77b3de;
 		}
 		.sparkline .hint:hover .bar {
-			background-color:red
+			background-color:purple;/*#*/
 		}
 		[data-hint]::after {
 			background:rgba(0,0,0,0.5);
@@ -365,7 +365,7 @@ A Twilight Sparkle theme for derpibooru.
 		.image-slider>div::before {
 			background:linear-gradient(-45deg,#fff 50%,transparent 0);
 		}
-
+		
 		.filter {
 			background:#fbe6f1;/*#*/
 			border:1px solid #d9e7f1;
@@ -376,8 +376,8 @@ A Twilight Sparkle theme for derpibooru.
 			background:#e3b5f3;/*#*/  
 		}
 		.filter .filter-options ul li a:hover {
-			color:#dc4b0c;  
-			background:#e7e395;  
+			color:#a52174;/*#*/  
+			background:#da97f2;/*#*/
 		}
 
 		.field-error-js {
