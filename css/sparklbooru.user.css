@@ -2,6 +2,8 @@
 Twilibooru (Dark)
 
 A Twilight Sparkle theme for derpibooru.
+
+Update 1: Added support for Derpibooru Extra Emoticons
 */
 @-moz-document
 	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org).*') {
@@ -773,6 +775,11 @@ A Twilight Sparkle theme for derpibooru.
 		
 		.fa.fa-image::before {
 			content: '\f02d';
+		}
+		
+		/* Emoticon picker support */
+		#comment_emotes {
+			border-color: #713584;
 		}
 }
 
