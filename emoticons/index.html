@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title id="document_title">Sollace.io</title>
+		<link rel="icon" sizes="160x160" href="images/favicon.png">
+		<script src="https://code.jquery.com/jquery-1.8.3.min.js" id="jquery" ></script>
+		<link type="text/css" href="../css/base.css" rel="stylesheet" />
+		<link type="text/css" href="../css/style.css" rel="stylesheet" />
+	</head>
+	<body class="fade-target">
+		<div class="body-container">
+			<div class="emoticons_listing">
+				<ul>
+				</ul>
+				<script>
+function renderEmotes(json) {
+	var listing = $('.emoticons_listing ul');
+	$.each(json, function() {
+		var id = this.id;
+		var holder = $('<li class="group"><h1>' + id + '</h1><ul></ul></li>');
+		listing.append(holder);
+		holder = holder.find('ul');
+		$.each(this.emotes, function() {
+			holder.append('<li title=":' + this.split(/\.|-/)[0] + ':"><img src="https://sollace.github.io/emoticons/' + id + '/' + this + '" /></li>');
+		});
+	});
+}
+$.ajax({
+	url: '/emoticons/index.json',
+	method: 'GET',
+	success: renderEmotes
+});
+				</script>
+				<style>
+.body-container {
+  text-align: center;
+  margin: 10px;
+}
+
+.emoticons_listing {
+  display: inline-block;
+  max-width: 800px;
+  background: rgba(255,255,255,0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.emoticons_listing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.emoticons_listing .group {
+  display: block;
+}
+.emoticons_listing .group li {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 100%;
+  transition: background 0.25s ease;
+}
+.emoticons_listing .group li:hover {
+  background: #eee;
+}
+				</style>
+			</div>
+			<script src="../js/actiontimer.js" ></script>
+		</div>
+	</body>
+</html>
