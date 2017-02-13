@@ -2,10 +2,12 @@
 Dressabooru
 
 A fabulous theme for derpibooru.
+
+Edit: Fixed some tags being fabulous without permission
 */
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org).*') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org).*') {
 		mark {
 			background-color:#ff0;
 			color:#000
@@ -188,15 +190,15 @@ A fabulous theme for derpibooru.
 			border-bottom:1px solid #d9e7f1
 		}
 
-		.block__header,a.block__header--single-link {
+		.block__header,a.block__header--single-item {
 			background:#e9f0ee;/*#*/  
 			color:#333
 		}
-		.block__header a,a.block__header--single-link {
+		.block__header a,a.block__header--single-item {
 			background:#e9f0ee;/*#*/  
 			color:#4f8da7;/*#*/
 		}
-		.block__header a:hover,a.block__header--single-link:hover {
+		.block__header a:hover,a.block__header--single-item:hover {
 			background-color:#e4e4e4;/*#*/
 			color:#5d4998;/*#*/
 		}
@@ -702,8 +704,8 @@ A fabulous theme for derpibooru.
 		
 		/*Highlight best pony*/
 		.tag[data-tag-name*="rarity"]:not([data-tag-name*="oc:"]):not([data-tag-name*="artist:"]),
-		.tag[data-tag-name*="rari"]:not([data-tag-name*="oc:"]):not([data-tag-name*="artist:"]),
-		.tag[data-tag-name*="rity"]:not([data-tag-name="charity"]):not([data-tag-name*="clarity"]):not([data-tag-name*="integrity"]):not([data-tag-name*="oc:"]):not([data-tag-name*="artist:"]),
+		.tag[data-tag-name*="rari"]:not([data-tag-name*="librari"]):not([data-tag-name*="oc:"]):not([data-tag-name*="artist:"]),
+		.tag[data-tag-name*="rity"]:not([data-tag-name="charity"]):not([data-tag-name="charity kindheart"]):not([data-tag-name*="clarity"]):not([data-tag-name*="integrity"]):not([data-tag-name*="oc:"]):not([data-tag-name*="artist:"]),
 		.tag[data-tag-name="sparember"], .tag[data-tag-name="clarity"] {
 			background: #6d59ab;
 			border-color: #450b62;
@@ -763,7 +765,7 @@ A fabulous theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/rules') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/rules') {
 		.rule h2.important {
 			font-size: 0;
 		}

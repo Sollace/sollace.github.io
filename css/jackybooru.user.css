@@ -5,7 +5,7 @@ An applejack theme for derpibooru.
 */
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org).*') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org).*') {
 		mark {
 			background-color:#ff0;
 			color:#000
@@ -188,15 +188,15 @@ An applejack theme for derpibooru.
 			border-bottom:1px solid #d9e7f1
 		}
 
-		.block__header,a.block__header--single-link {
+		.block__header,a.block__header--single-item {
 			background:#f7f3a5;/*#*/
 			color:#333
 		}
-		.block__header a,a.block__header--single-link {
+		.block__header a,a.block__header--single-item {
 			background:#f7f3a5;/*#*/
 			color:#ec5b1c;/*#*/
 		}
-		.block__header a:hover,a.block__header--single-link:hover {
+		.block__header a:hover,a.block__header--single-item:hover {
 			background-color:#efe979;/*#*/
 			color:#d25119;/*#*/
 		}
@@ -785,7 +785,7 @@ An applejack theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new') {
 		label[for="gallery_title"],
 		label[for="gallery_thumbnail_id"],
 		label[for="gallery_spoiler_warning"],
@@ -818,7 +818,7 @@ An applejack theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
 		#content > h1,
 		#content > h1 + p,
 		#content > h1 + p + p,
@@ -844,7 +844,7 @@ An applejack theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/galleries') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries') {
 		#content > h1, .block__header__title {
 			font-size: 0;
 			vertical-align: top;

@@ -6,7 +6,7 @@ A Twilight Sparkle theme for derpibooru.
 Update 1: Added support for Derpibooru Extra Emoticons
 */
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org).*') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org).*') {
 		mark {
 			background-color:#ff0;
 			color:#fff
@@ -190,15 +190,15 @@ Update 1: Added support for Derpibooru Extra Emoticons
 			border-bottom:1px solid #79398d;/*#*/
 		}
 
-		.block__header,a.block__header--single-link {
+		.block__header,a.block__header--single-item {
 			background:#1c2663;/*#*/  
 			color:#fb71ba;/*#*/
 		}
-		.block__header a,a.block__header--single-link {
+		.block__header a,a.block__header--single-item {
 			background:#1c2663;/*#*/  
 			color:#e31c85;/*#*/
 		}
-		.block__header a:hover,a.block__header--single-link:hover {
+		.block__header a:hover,a.block__header--single-item:hover {
 			background-color:#060f42;/*#*/
 			color:#c51773;/*#*/
 		}
@@ -784,7 +784,7 @@ Update 1: Added support for Derpibooru Extra Emoticons
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new') {
 		label[for="gallery_title"],
 		label[for="gallery_thumbnail_id"],
 		label[for="gallery_spoiler_warning"],
@@ -817,7 +817,7 @@ Update 1: Added support for Derpibooru Extra Emoticons
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
 		#content > h1,
 		#content > h1 + p,
 		#content > h1 + p + p,
@@ -843,7 +843,7 @@ Update 1: Added support for Derpibooru Extra Emoticons
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/galleries') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries') {
 		#content > h1, .block__header__title {
 			font-size: 0;
 			vertical-align: top;

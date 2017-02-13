@@ -5,7 +5,7 @@ The Pinkie Pie theme for derpibooru.
 */
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org).*') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org).*') {
 		mark {
 			background-color:#ff0;
 			color:#000
@@ -188,15 +188,15 @@ The Pinkie Pie theme for derpibooru.
 			border-bottom:1px solid #d9e7f1
 		}
 
-		.block__header,a.block__header--single-link {
+		.block__header,a.block__header--single-item {
 			background:#edafcd;/*#*/
 			color:#333
 		}
-		.block__header a,a.block__header--single-link {
+		.block__header a,a.block__header--single-item {
 			background:#edafcd;/*#*/
 			color:#b0056a;/*#*/
 		}
-		.block__header a:hover,a.block__header--single-link:hover {
+		.block__header a:hover,a.block__header--single-item:hover {
 			background-color:#ef9ec5;/*#*/
 			color:#7b0049;;/*#*/
 		}
@@ -779,7 +779,7 @@ The Pinkie Pie theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/notifications') {
 		#content > h1,
 		#content > h1 + p,
 		#content > h1 + p + p,
