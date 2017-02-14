@@ -2,6 +2,8 @@
 Jackybooru
 
 An applejack theme for derpibooru.
+
+Update: Fixed some bugs with 'Orchards'
 */
 
 @-moz-document
@@ -705,7 +707,7 @@ An applejack theme for derpibooru.
 		
 		.header--secondary a[href='/galleries'],
 		a.header__link[href^='/galleries/'],
-		div.dropdown.block__header__dropdown-tab a[href^="/galleries/"],
+		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
 		label[for='topic_anonymous'],
 		label[for='comment_anonymous'],
 		a[href='/'].header__link.hide-mobile {
@@ -742,7 +744,7 @@ An applejack theme for derpibooru.
 		}
 		.block__header > a[href^='/galleries/'] i,
 		a.header__link[href^='/galleries/'] i,
-		div.dropdown.block__header__dropdown-tab a[href^="/galleries/"] i,
+		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"] i,
 		div.dropdown.block__header__dropdown-tab > a[href='#'] > i::before,
 		div.dropdown.block__header__dropdown-tab > a[href='#'] > span {
 			font-size: 14px;
@@ -764,7 +766,7 @@ An applejack theme for derpibooru.
 		.header--secondary a[href='/galleries']::after {
 			padding-left: 0;
 		}
-		div.dropdown.block__header__dropdown-tab a[href^="/galleries/"] i::after {
+		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"] i::after {
 			content: 'Create new orchard';
 			font-size: 14px;
 			font-weight: bold;
@@ -785,7 +787,7 @@ An applejack theme for derpibooru.
 }
 
 @-moz-document
-	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new') {
+	regexp('http?[s]://(www\.)?(derpi|trixie)boo(\.ru|ru\.org)/galleries/.+/new.*') {
 		label[for="gallery_title"],
 		label[for="gallery_thumbnail_id"],
 		label[for="gallery_spoiler_warning"],
