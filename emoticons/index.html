@@ -22,7 +22,7 @@ function renderEmotes(json) {
 		listing.append(holder);
 		holder = holder.find('ul');
 		$.each(this.emotes, function() {
-			holder.append('<li title=":' + this.split(/\.|-/)[0] + ':"><img src="https://sollace.github.io/emoticons/' + id + '/' + this + '" /></li>');
+			holder.append('<li title=":' + this.split(/\.|-/)[0] + ':"><a href="https://sollace.github.io/emoticons/' + id + '/' + this + '"><img src="https://sollace.github.io/emoticons/' + id + '/' + this + '" /></a></li>');
 		});
 	});
 }
