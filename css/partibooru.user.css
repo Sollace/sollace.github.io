@@ -697,13 +697,11 @@ The Pinkie Pie theme for derpibooru.
 		.block a[data-watch-icon],
 		#image_options_area + h4,
 		label[for='topic_anonymous'],
-		label[for='comment_anonymous'],
-		a[href='/'].header__link.hide-mobile {
+		label[for='comment_anonymous'] {
 			font-size: 0;
 		}
 		label[for='topic_anonymous']::before,
-		label[for='comment_anonymous']::before,
-		a[href='/'].header__link.hide-mobile::before {
+		label[for='comment_anonymous']::before {
 			display: inline-block;
 		}
 		.block a[data-watch-icon] {
@@ -714,11 +712,19 @@ The Pinkie Pie theme for derpibooru.
 			pointer-events: none;
 			vertical-align: middle;
 		}
+		
+		a[href='/'].header__link.hide-mobile {
+			font-size: 0;
+			line-height: 0;
+		}
 		a[href='/'].header__link.hide-mobile::before {
+			display: inline-block;
 			content: 'Partibooru';
 			font-size: 16px;
-			padding: 5px;
+			padding: 0 12px;
+			line-height: 36px;
 		}
+		
 		.block a[data-watch-icon] i.fa-bell-o::after {
 			content: 'Join the Party';
 			font-size: 13px;

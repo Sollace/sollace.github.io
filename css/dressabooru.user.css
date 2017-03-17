@@ -689,17 +689,16 @@ Edit: Fixed some tags being fabulous without permission
 			border:1px solid #d9e7f1;
 		}
 
-		
 		a[href='/'].header__link.hide-mobile {
 			font-size: 0;
+			line-height: 0;
 		}
 		a[href='/'].header__link.hide-mobile::before {
 			display: inline-block;
-		}
-		a[href='/'].header__link.hide-mobile::before {
 			content: 'Dressabooru';
 			font-size: 16px;
-			padding: 5px;
+			padding: 0 12px;
+			line-height: 36px;
 		}
 		
 		/*Highlight best pony*/

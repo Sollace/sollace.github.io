@@ -709,19 +709,23 @@ Update: Fixed some bugs with 'Orchards'
 		a.header__link[href^='/galleries/'],
 		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
 		label[for='topic_anonymous'],
-		label[for='comment_anonymous'],
-		a[href='/'].header__link.hide-mobile {
+		label[for='comment_anonymous'] {
 			font-size: 0;
 		}
 		label[for='topic_anonymous']::before,
-		label[for='comment_anonymous']::before,
-		a[href='/'].header__link.hide-mobile::before {
+		label[for='comment_anonymous']::before {
 			display: inline-block;
 		}
+		a[href='/'].header__link.hide-mobile {
+			font-size: 0;
+			line-height: 0;
+		}
 		a[href='/'].header__link.hide-mobile::before {
+			display: inline-block;
 			content: 'Jackybooru';
 			font-size: 16px;
-			padding: 5px;
+			padding: 0 12px;
+			line-height: 36px;
 		}
 		label[for='topic_anonymous']::before,
 		label[for='comment_anonymous']::before {
@@ -729,7 +733,8 @@ Update: Fixed some bugs with 'Orchards'
 			font-size: 13px;
 		}
 		.block__header > a[href^='/galleries/'],
-		div.dropdown.block__header__dropdown-tab > a[href='#'] {
+		div.dropdown.block__header__dropdown-tab > a[href='#'],
+		a.header__link[href^='/galleries']{
 			font-size: 0;
 			vertical-align: top;
 		}
@@ -743,7 +748,7 @@ Update: Fixed some bugs with 'Orchards'
 			vertical-align: middle;
 		}
 		.block__header > a[href^='/galleries/'] i,
-		a.header__link[href^='/galleries/'] i,
+		a.header__link[href^='/galleries'] i,
 		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"] i,
 		div.dropdown.block__header__dropdown-tab > a[href='#'] > i::before,
 		div.dropdown.block__header__dropdown-tab > a[href='#'] > span {
@@ -755,12 +760,11 @@ Update: Fixed some bugs with 'Orchards'
 			font-size: 16px;
 		}
 		.header--secondary a[href='/galleries']::after,
-		a.header__link[href^='/galleries/'] i::after {
+		a.header__link[href^='/galleries'] i::after {
 			content: 'Orchards';
 			font-size: 16px;
 			font-family: verdana,arial,helvetica,sans-serif;
 			padding-left: 10px;
-			padding-bottom: 5px;
 			vertical-align: middle;
 		}
 		.header--secondary a[href='/galleries']::after {
