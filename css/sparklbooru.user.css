@@ -695,7 +695,7 @@ Update 1: Added support for Derpibooru Extra Emoticons
 		
 		.header--secondary a[href='/galleries'],
 		a.header__link[href^='/galleries/'],
-		div.dropdown.block__header__dropdown-tab a[href^="/galleries/"],
+		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
 		label[for='topic_anonymous'],
 		label[for='comment_anonymous'] {
 			font-size: 0;

@@ -690,7 +690,7 @@ A Twilight Sparkle theme for derpibooru.
 		
 		.header--secondary a[href='/galleries'],
 		a.header__link[href^='/galleries/'],
-		div.dropdown.block__header__dropdown-tab a[href^="/galleries/"],
+		div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
 		label[for='topic_anonymous'],
 		label[for='comment_anonymous'] {
 			font-size: 0;
@@ -699,7 +699,6 @@ A Twilight Sparkle theme for derpibooru.
 		label[for='comment_anonymous']::before {
 			display: inline-block;
 		}
-		
 		a[href='/'].header__link.hide-mobile {
 			font-size: 0;
 			line-height: 0;
@@ -711,7 +710,6 @@ A Twilight Sparkle theme for derpibooru.
 			padding: 0 12px;
 			line-height: 36px;
 		}
-		
 		label[for='topic_anonymous']::before,
 		label[for='comment_anonymous']::before {
 			content: 'Pancake anonymously';
@@ -773,7 +771,7 @@ A Twilight Sparkle theme for derpibooru.
 			padding-bottom: 5px;
 			vertical-align: middle;
 		}
-		
+    
 		.fa.fa-image::before {
 			content: '\f02d';
 		}
