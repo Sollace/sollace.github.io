@@ -80,5 +80,18 @@
 			"sollace-d6ymjq8.gif",
 			"twiscepter-d6ymjpx.gif"
 		]
+	},
+	{
+		"id": "extended",
+		"emotes": [
+			"button_stache.png",
+			"dtiara_mad.png",
+			"mandy.png",
+			"nyx_happy.png",
+			"nyx_sly.png",
+			"nyx_umad.png",
+			"snowflake_yeah.png",
+			"tom.png"
+		]
 	}
 ]
