@@ -37,6 +37,7 @@
 			"rainbowexcited.png",
 			"rainbowhuh.png",
 			"rainbowkiss.png",
+			"rainbowcat2.png",
 			"rainbowlaugh.png",
 			"rainbowwild.png",
 			"raritycry.png",
@@ -84,13 +85,13 @@
 	{
 		"id": "extended",
 		"emotes": [
-			"button_stache.png",
-			"dtiara_mad.png",
+			"buttonstache.png",
+			"dtmad.png",
 			"mandy.png",
-			"nyx_happy.png",
-			"nyx_sly.png",
-			"nyx_umad.png",
-			"snowflake_yeah.png",
+			"nyxhappy.png",
+			"nyxsly.png",
+			"nyxumad.png",
+			"yeah.png",
 			"tom.png"
 		]
 	}
