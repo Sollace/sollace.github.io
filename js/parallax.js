@@ -1,5 +1,5 @@
 $(window).ready(function () {
-    var banner = $('#banner');
+  var banner = $('#banner');
 	if (banner.length) {
 	    $(window).on('scroll', function () {
 	        var top = window.scrollY*0.5;

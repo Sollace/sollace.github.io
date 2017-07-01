@@ -4,23 +4,64 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title id="document_title">Sollace.io</title>
 		<link rel="icon" sizes="160x160" href="images/favicon.png">
-		<script src="https://code.jquery.com/jquery-1.8.3.min.js" id="jquery" ></script>
 		<link type="text/css" href="css/base.css" rel="stylesheet" />
 		<link type="text/css" href="css/style.css" rel="stylesheet" />
 	</head>
 	<body class="fade-target">
 		<div class="body-container">
 			<div class="pinkie" >
-				<span class="text" style="opacity:1">
-					<a href="http://www.fimfiction.net/user/Sollace">Fimfiction</a>
-					-
-					<a href="http://comeha.deviantart.com">DeviantArt</a>
-					-
-					<a href="http://disqus.com/by/S0llace/">Disqus</a>
-					<br>
-					<a class="small" href="https://derpibooru.org/profiles/Sollace">Derpibooru</a>
+				<span class="splurge" ></span>
+				<span class="text">
+					<div class="loading-message">Loading Pinkie Pies 1 of 1...</div>
+					<div class="links">
+						<a href="http://www.fimfiction.net/user/Sollace">Fimfiction</a>
+						-
+						<a href="http://comeha.deviantart.com">DeviantArt</a>
+						-
+						<a href="http://disqus.com/by/S0llace/">Disqus</a>
+						-
+						<a href="https://derpibooru.org/profiles/Sollace">Derpibooru</a>
+					</div>
 				</span>
 			</div>
+			<!--<div class="timer skinned">
+				<span class="count hours">0</span>
+				<span class="count minutes">0</span>
+				<span class="count seconds">0</span>
+				<script>
+var date = new Date();
+var timer = {
+  interval: 1000,
+  hours: date.getHours(),
+  minutes: date.getMinutes(),
+  seconds: date.getSeconds(),
+  init: function(callback) {
+    callback('hours');
+    callback('minutes');
+    callback('seconds');
+    return true;
+  },
+  tick: function(callback) {
+     date = new Date();
+     var now = date.getSeconds();
+     if (now != this.seconds) {
+        this.seconds = now;
+        callback('seconds');
+     }
+     now = date.getMinutes();
+     if (now != this.minutes) {
+        this.minutes = now;
+        callback('minutes');
+     }
+     now = date.getHours();
+     if (now != this.hours) {
+        this.hours = now;
+        callback('hours');
+     }
+  }
+};
+				</script>
+			</div>-->
 			<script src="js/actiontimer.js" ></script>
 		</div>
 	</body>

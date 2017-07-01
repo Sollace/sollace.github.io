@@ -22,10 +22,10 @@ body.coloured {
   opacity: 0.3;
 }
 .pinkie .splurge {
-  -webkit-animation: fillup 150s linear 0s forwards;
-  -moz-animation: fillup 150s linear 0s forwards;
-  -o-animation: fillup 150s linear 0s forwards;
-  animation: fillup 150s linear 0s forwards;
+  -webkit-animation: fillup 10s ease-in-out 0s forwards;
+  -moz-animation: fillup 10s ease-in-out 0s forwards;
+  -o-animation: fillup 10s ease-in-out 0s forwards;
+  animation: fillup 10s ease-out 0s forwards;
   top: 70%;
   bottom: 30%;
 }
@@ -85,9 +85,14 @@ body.coloured {
 .timer.skinned span.count::after {
   display: inline-block;
   position: absolute;
-  bottom: -1em;
+  bottom: -0.5em;
   right: -5px;
   font-size: 20px;
+  background: #fff;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  line-height: 15px;
 }
 
 .timer.skinned span.hours::after {content: 'h';}
