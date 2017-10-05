@@ -16,7 +16,7 @@
 function renderEmotes(json) {
 	document.querySelectorAll('.emoticons_listing ul').innerHTML = [].map.call(json, function(a) {
 		return '<li class="group"><h1>' + a.id + '</h1><ul>' + a.emotes.map(function(emote) {
-			return '<li title=":' + emote.split(/\.|-/)[0] + ':"><a href="https://sollace.github.io/emoticons/' + a.id + '/' + emote + '"><img src="https://sollace.github.io/emoticons/' + e.id + '/' + emote + '" /></a></li>'
+			return '<li title=":' + emote.split(/\.|-/)[0] + ':"><a href="https://sollace.github.io/emoticons/' + a.id + '/' + emote + '"><img src="https://sollace.github.io/emoticons/' + a.id + '/' + emote + '" /></a></li>'
 		}) + '</ul></li>'
 	}).join('');
 }
