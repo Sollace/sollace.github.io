@@ -4,7 +4,6 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title id="document_title">Sollace.io</title>
 		<link rel="icon" sizes="160x160" href="images/favicon.png">
-		<script src="https://code.jquery.com/jquery-1.8.3.min.js" id="jquery" ></script>
 		<link type="text/css" href="../css/base.css" rel="stylesheet" />
 		<link type="text/css" href="../css/style.css" rel="stylesheet" />
 	</head>
@@ -15,22 +14,15 @@
 				</ul>
 				<script>
 function renderEmotes(json) {
-	var listing = $('.emoticons_listing ul');
-	$.each(json, function() {
-		var id = this.id;
-		var holder = $('<li class="group"><h1>' + id + '</h1><ul></ul></li>');
-		listing.append(holder);
-		holder = holder.find('ul');
-		$.each(this.emotes, function() {
-			holder.append('<li title=":' + this.split(/\.|-/)[0] + ':"><a href="https://sollace.github.io/emoticons/' + id + '/' + this + '"><img src="https://sollace.github.io/emoticons/' + id + '/' + this + '" /></a></li>');
-		});
-	});
+	document.querySelectorAll('.emoticons_listing ul').innerHTML = [].map.call(json, function(a) {
+		return '<li class="group"><h1>' + a.id + '</h1><ul>' + a.emotes.map(function(emote) {
+			return '<li title=":' + emote.split(/\.|-/)[0] + ':"><a href="https://sollace.github.io/emoticons/' + a.id + '/' + emote + '"><img src="https://sollace.github.io/emoticons/' + e.id + '/' + emote + '" /></a></li>'
+		}) + '</ul></li>'
+	}).join('');
 }
-$.ajax({
-	url: '/emoticons/index.json',
-	method: 'GET',
-	success: renderEmotes
-});
+fetch('/emoticons/index.json', { method: 'GET'}).then(function(r) {
+	return r.json();
+}).then(renderEmotes);
 				</script>
 				<style>
 .body-container {
@@ -65,7 +57,6 @@ $.ajax({
 }
 				</style>
 			</div>
-			<script src="../js/actiontimer.js" ></script>
 		</div>
 	</body>
 </html>
