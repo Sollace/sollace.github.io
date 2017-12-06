@@ -289,12 +289,12 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     border-color:#c9311f;/*#*/
 }
 
-.button {
+.button, .communication__toolbar__button {
     background-color:#3C1D47;/*#*/
     border:1px solid #713584;/*#*/
     color:#ddd;/*#*/
 }
-.button:hover {
+.button:hover, .communication__toolbar__button:hover {
     background-color:#562468;/*#*/
     border-color:#79398d;/*#*/
 }
