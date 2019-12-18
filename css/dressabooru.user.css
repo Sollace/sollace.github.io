@@ -121,11 +121,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background:#e9f0ee;/*#*/  
     color:#333
 }
-.block__header a,a.block__header--single-item {
+.block__header a,a.block__header--single-item, a.media-box__header--link {
     background:#e9f0ee;/*#*/  
     color:#4f8da7;/*#*/
 }
-.block__header a:hover,a.block__header--single-item:hover {
+.block__header a:hover,a.block__header--single-item:hover, a.media-box__header--link:hover {
     background-color:#e4e4e4;/*#*/
     color:#5d4998;/*#*/
 }
@@ -316,7 +316,7 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#333;
     background:#f3f3f3;
 }
-input:focus,select:focus,textarea:focus {
+.input:focus {
     border-color: #97c6f5;/*#*/
     background: #d4e9ff;/*#*/
 }

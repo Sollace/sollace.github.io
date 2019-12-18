@@ -151,11 +151,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background:#edafcd;/*#*/
     color:#333
 }
-.block__header a,a.block__header--single-item {
+.block__header a,a.block__header--single-item, a.media-box__header--link {
     background:#edafcd;/*#*/
     color:#b0056a;/*#*/
 }
-.block__header a:hover,a.block__header--single-item:hover {
+.block__header a:hover,a.block__header--single-item:hover, a.media-box__header--link:hover {
     background-color:#ef9ec5;/*#*/
     color:#7b0049;;/*#*/
 }
@@ -352,7 +352,7 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#333;
     background:#f3f3f3;
 }
-input:focus,select:focus,textarea:focus {
+.input:focus {
     border-color:#c98ba8;/*#*/
     background:#ffdced;/*#*/
 }
@@ -674,11 +674,14 @@ label[for='comment_anonymous']::before {
     vertical-align: middle;
 }
 
-a[href='/'].header__link.hide-mobile {
+
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
     font-size: 0;
     line-height: 0;
 }
-a[href='/'].header__link.hide-mobile::before {
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Partibooru';
     font-size: 16px;

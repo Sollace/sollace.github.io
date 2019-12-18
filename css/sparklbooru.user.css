@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org.*") {
 /*
 Twilibooru (Dark)
 
@@ -15,15 +15,15 @@ mark {
 button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
     outline:1px dotted ButtonText
 }
-fieldset {
-    border:1px solid silver;
-}
 body {
-    background-color:#000;
-    color:#fb71ba;
+    background-color:#000;/*#*/
+    color:#fb71ba;/*#*/
 }
 pre {
     background-color:#3C1D47;/*#*/
+}
+optgroup {
+    background: #f32793;/*#*/
 }
 
 a,a:active,a:visited {
@@ -195,11 +195,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background:#1c2663;/*#*/  
     color:#fb71ba;/*#*/
 }
-.block__header a,a.block__header--single-item {
+.block__header a,a.block__header--single-item, a.media-box__header--link {
     background:#1c2663;/*#*/  
     color:#e31c85;/*#*/
 }
-.block__header a:hover,a.block__header--single-item:hover {
+.block__header a:hover,a.block__header--single-item:hover, a.media-box__header--link:hover {
     background-color:#060f42;/*#*/
     color:#c51773;/*#*/
 }
@@ -281,12 +281,12 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     border-color:#5e2188;/*#*/
 }
 .block__list a.block__list__link:hover,.block__list a.block__list__link.active {
-    background:#cc94e0;/*#*/
+    background:#431055;/*#*/
     border-color:#79398d;/*#*/
 }
 .block__list a.block__list__link.active:hover {
-    background:#a42d1f;/*#*/
-    border-color:#c9311f;/*#*/
+    background:#591571;/*#*/
+    border-color:#79398d;/*#*/
 }
 
 .button, .communication__toolbar__button {
@@ -309,10 +309,12 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#3c76a1;/*#*/
 }
 
+.button, .communication__toolbar__button, .toggle-box + label,
 .button--state-primary {
     background-color:#1c2663;/*#*/  
     border-color:#713584;/*#*/
 }
+.button:hover, .communication__toolbar__button:hover, .toggle-box + label:hover,
 .button--state-primary:hover {
     background-color:#5e2188;/*#*/
     border-color:#79398d;/*#*/
@@ -394,7 +396,7 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#ddd;/*#*/
     background:#3C1D47;/*#*/
 }
-input:focus,select:focus,textarea:focus {
+.input:focus {
     border-color:#122383;/*#*/  
     background:#421951;/*#*/
 }
@@ -790,7 +792,7 @@ div.dropdown.block__header__dropdown-tab a[href^="/galleries/"] i::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new") {
+@-moz-document regexp("http?[s]://(philomena\\.|www\\\\.)?(derpi|trixie)boo(\\\\.ru|ru\\\\.org)/galleries/.+/new") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -822,7 +824,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -847,7 +849,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries(/|)") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -857,7 +859,33 @@ label[for="gallery_title"]::after {
     font-size: 24px;
 }
 .block__header__title::after {
-    content: 'Public Libarary';
+    content: 'Public Library';
+    font-size: 14px;
+    font-family: verdana,arial,helvetica,sans-serif;
+    vertical-align: middle;
+}
+.block__content h3 {
+    font-size: 0;
+    vertical-align: top;
+}
+.block__content h3::after {
+    content: 'Search Bookshelves';
+    font-size: 23px;
+    line-height: 30px;
+}
+}
+
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries/[0-9]+") {
+.block__header--sub .block__header__title {
+    font-size: 0;
+    vertical-align: top;
+}
+#content > h1::after {
+    content: 'Bookshelves';
+    font-size: 24px;
+}
+.block__header--sub .block__header__title::after {
+    content: 'A public library by';
     font-size: 14px;
     font-family: verdana,arial,helvetica,sans-serif;
     vertical-align: middle;

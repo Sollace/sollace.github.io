@@ -143,11 +143,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background-color:#ca9756;/*#*/
 }
 
-.block__header,a.block__header--single-item, a.media-box__header--link {
+.block__header,a.block__header--single-item {
     background:#f7f3a5;/*#*/
     color:#333
 }
-.block__header a,a.block__header--single-item {
+.block__header a,a.block__header--single-item, a.media-box__header--link {
     background:#f7f3a5;/*#*/
     color:#ec5b1c;/*#*/
 }
@@ -520,5 +520,22 @@ label[for="gallery_title"]::after {
 .block__content h3::after {
     content: 'Search Orchards';
     font-size: 1.17em;
+}
+}
+
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries/[0-9]+") {
+.block__header--sub .block__header__title {
+    font-size: 0;
+    vertical-align: top;
+}
+#content > h1::after {
+    content: 'Bookshelves';
+    font-size: 24px;
+}
+.block__header--sub .block__header__title::after {
+    content: 'An orchard by';
+    font-size: 14px;
+    font-family: verdana,arial,helvetica,sans-serif;
+    vertical-align: middle;
 }
 }
