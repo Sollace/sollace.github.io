@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
 /*
 Jackybooru
 
@@ -6,24 +6,16 @@ An applejack theme for derpibooru.
 
 Update: Fixed some bugs with 'Orchards'
 Update2: Fixed the counter colours
+Update3: 
+  - Updated and fixed broken colours on inputs
+  - Some selectors not working when there is a trainling "/"
+  - Fixed changes due to site layout changes
+  - Cut down the size of the file by removing styles I don't modify.
+  - Added philomena to the whitelist.
 */
 
-mark {
-    background-color:#ff0;
-    color:#000
-}
-button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
-    outline:1px dotted ButtonText
-}
-fieldset {
-    border:1px solid silver;
-}
-body {
-    background-color:#fff;
-    color:#333;
-}
-pre {
-    background-color:#f3f3f3;
+optgroup {
+    background: #f3bb72;/*@*/
 }
 
 a,a:active,a:visited {
@@ -33,47 +25,38 @@ a:hover {
     color:#d25119;/*#*/
 }
 
-.table {
-    border:1px solid #d9e7f1
-}
-.table>thead>tr {
-    background:#fff
-}
-.table>tbody {
-    border:1px solid #d9e7f1
-}
 .table>tbody>tr:nth-child(odd) {
     background:#fffbe7;/*#*/
 }
 .table>tbody>tr:nth-child(even) {
-    background:#fff
+    background:#fff;/***/
 }
 .table>tbody>tr:nth-child(odd).success,.table>tbody>tr:nth-child(odd) .success {
-    background:#c8f1b0
+    background:#c8f1b0;/***/
 }
 .table>tbody>tr:nth-child(even).success,.table>tbody>tr:nth-child(even) .success {
-    background:#e3f6d9
+    background:#e3f6d9;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).success,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .success {
-    background:#c8f1b0
+    background:#c8f1b0;/***/
 }
 .table>tbody>tr:nth-child(odd).warning,.table>tbody>tr:nth-child(odd) .warning {
-    background:#f1ebb3
+    background:#f1ebb3;/***/
 }
 .table>tbody>tr:nth-child(even).warning,.table>tbody>tr:nth-child(even) .warning {
-    background:#f3f0d0
+    background:#f3f0d0;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).warning,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .warning {
-    background:#f1ebb3
+    background:#f1ebb3;/***/
 }
 .table>tbody>tr:nth-child(odd).danger,.table>tbody>tr:nth-child(odd) .danger {
-    background:#f3c8c2
+    background:#f3c8c2;/***/
 }
 .table>tbody>tr:nth-child(even).danger,.table>tbody>tr:nth-child(even) .danger {
-    background:#f0dcd9
+    background:#f0dcd9;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).danger,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .danger {
-    background:#f3c8c2
+    background:#f3c8c2;/***/
 }
 hr {
     background:#d9e7f1
@@ -150,47 +133,17 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     padding-bottom: 18px;
     height: 0;
 }
-.toggle-box+label::before {
-    border-color:transparent transparent transparent #333
-}
-.toggle-box:checked+label::before {
-    border-color:#333 transparent transparent transparent
-}
+
 #imagespns {
     border:1px solid #d9e7f1;
     background:#fffbe7;/*#*/
 }
-#imagespns .spnstxt {
-    color:#999;
-}
 
-.sparkline {
-    border-bottom:1px solid #77b3de
-}
 .sparkline .bar {
     background-color:#ca9756;/*#*/
 }
-.sparkline .hint:hover .bar {
-    background-color:red
-}
-[data-hint]::after {
-    background:rgba(0,0,0,0.5);
-    color:white;
-    border:1px solid white;
-}
 
-.block__content,.block__tab {
-    border-left:1px solid #d9e7f1;
-    border-right:1px solid #d9e7f1;
-}
-.block__content:first-child {
-    border-top:1px solid #d9e7f1
-}
-.block__content:last-child,.block__tab:not(.hidden) {
-    border-bottom:1px solid #d9e7f1
-}
-
-.block__header,a.block__header--single-item {
+.block__header,a.block__header--single-item, a.media-box__header--link {
     background:#f7f3a5;/*#*/
     color:#333
 }
@@ -198,7 +151,7 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background:#f7f3a5;/*#*/
     color:#ec5b1c;/*#*/
 }
-.block__header a:hover,a.block__header--single-item:hover {
+.block__header a:hover,a.block__header--single-item:hover, a.media-box__header--link:hover {
     background-color:#efe979;/*#*/
     color:#d25119;/*#*/
 }
@@ -213,50 +166,20 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background:#efe979;/*#*/
     color:#d25119;/*#*/
 }
-
 .block__header--js-tabbed {
-    background: none;
-    border-bottom:1px solid #d9e7f1;
+    background: none;/***/
+    border-bottom:1px solid #d9e7f1;/***/
 }
+
 .block__header--js-tabbed a {
     border-top:1px solid #f8f5bd;/*#*/
     border-bottom:1px solid #f8f5bd;/*#*/
-}
-.block__header--js-tabbed a:hover {
-    border-color:#e8e5ad;
 }
 .block__header--js-tabbed a:first-child {
     border-left:1px solid #f8f5bd;/*#*/
 }
 .block__header--js-tabbed a:last-child {
     border-right:1px solid #f8f5bd;/*#*/
-}
-.block__header--js-tabbed a.selected,.block__header--js-tabbed a.selected:hover {
-    color:#333;
-    background:#fff;
-    border-color:#d9e7f1;
-    border-bottom:1px solid #fff
-}
-
-.block__content,.block__tab {
-    background:#fff
-}
-
-.block--fixed {
-    background:#fff;
-    border:1px solid #d9e7f1
-}
-.block--success {
-    background:#d2f0c0;
-    border-color:#bde9a3
-}
-.block--warning {
-    background:#f4f1d4;
-    border-color:#eee9bc
-}
-.block--danger {
-    background:#f0cfcb;
-    border-color:#ebc0bb
 }
 .block--primary {
     background:#f7f3a5;/*#*/
@@ -267,37 +190,9 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#d25119;/*#*/
 }
 
-.block__list {
-    border-bottom:1px solid #d9e7f1
-}
-.block__list a.block__list__link {
-    border:1px solid #d9e7f1;
-    background:#fff
-}
 .block__list a.block__list__link.primary {
     background:#f7f3a5;/*#*/
     border-color:#f8f5bd;/*#*/
-}
-.block__list a.block__list__link:hover,.block__list a.block__list__link.active {
-    background:#d2f0c0;
-    border-color:#bde9a3
-}
-.block__list a.block__list__link.active:hover {
-    background:#f0cfcb;
-    border-color:#ebc0bb
-}
-
-.button, .communication__toolbar__button {
-    background-color:#f3f3f3;
-    border:1px solid #cdcdcd;
-    color:#333;
-}
-.button:hover, .communication__toolbar__button:hover {
-    background-color:#ebebeb;
-    border-color:#c5c5c5
-}
-.button:active,.button:hover,.button:visited {
-    color:#333
 }
 
 .button--link {
@@ -307,51 +202,23 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#dc4b0c;/*#*/
 }
 
+
+.button, .communication__toolbar__button, .toggle-box + label,
 .button--state-primary {
     background-color:#f7f3a5;/*#*/
-    border-color:#9cd4f5
+    border-color:#7adb44; /*@*/
 }
+.button:hover, .communication__toolbar__button:hover, .toggle-box + label:hover,
 .button--state-primary:hover {
     background-color:#f8f5bd;/*#*/
-    border-color:#85caf3
-}
-.button--state-success {
-    background-color:#d2f0c0;
-    border-color:#9fdf7a
-}
-.button--state-success:hover {
-    background-color:#c3ebab;
-    border-color:#91da65
-}
-.button--state-warning {
-    background-color:#f4f1d4;
-    border-color:#e3da8f
-}
-.button--state-warning:hover {
-    background-color:#eee9bc;
-    border-color:#dcd277
-}
-.button--state-danger {
-    background-color:#f0cfcb;
-    border-color:#e2a39b
-}
-.button--state-danger:hover {
-    background-color:#eabcb7;
-    border-color:#dc9188
-}
-
-.comment_deleted {
-    color:#cf0001
-}
-.comment_under_review {
-    color:blue
+    border-color:#7adb44;/*@*/
 }
 .communication:target {
     outline:1px dashed green;/*#*/
 }
 .communication__options {
     background:#fffbe7;/*#*/
-    border-top:1px solid #d9e7f1
+    border-top:1px solid #d9e7f1;
 }
 
 .dr-open .image-cell .image-container img,.dr-rejected .image-cell .image-container img,.dr-accepted .image-cell .image-container img {
@@ -381,35 +248,15 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#dc4b0c;/*#*/
     background:#e7e395;/*#*/
 }
-
-.field-error-js {
-    background:#f4f1d4;
-}
-
 .input,.toggle-box+label {
-    border:1px solid #cdcdcd;
-    color:#333;
-    background:#f3f3f3;
+    background:#f8f5bd;/*@*/
 }
-input:focus,select:focus,textarea:focus {
+.input:focus {
     border-color:#f2ee97;/*#*/
-    background:#f8f7ea;/*#*/
-}
-.field_with_errors {
-    background:#ebc0bb
+    background:#fdfbd5;/*#*/
 }
 .media-box--js-sortable-chosen .media-box__header {
     background:#f8f5bd;/*#*/
-}
-.input--search-gallery-list {
-    border:1px solid #d9e7f1;
-}
-.add-to-gallery-list ::-webkit-scrollbar-track {
-    -webkit-box-shadow:inset 0 0 6px #ccc;
-    background-color:#fff
-}
-.add-to-gallery-list ::-webkit-scrollbar {
-    background-color:#fff
 }
 .add-to-gallery-list ::-webkit-scrollbar-thumb {
     background-color:#f8f5bd;/*#*/
@@ -473,165 +320,28 @@ span.header__link-user__dropdown-arrow:hover,.header__dropdown:hover span.header
     background:#f6f3b2;/*#*/
 }
 .header--secondary a {
-    color:#333;
+    color:#333; /*@*/
 }
 .header--secondary a:hover,.header--secondary .header__dropdown:hover>a,.header--secondary span.header__counter {
     background-color:#f2ee97;/*#*/
 }
-.header--secondary__admin-links {
-    background:#f7d6d6
-}
-.header--secondary__admin-links a {
-    background:#f7d6d6
-}
-.header--secondary__admin-links a:hover {
-    background:#f1b3b3
-}
-.flash--site-notice {
-    background:#1e537a;
-    color:#fff
-}
-.flash--site-notice a,.flash--site-notice a:active,.flash--site-notice a:visited {
-    color:#e4eef5
-}
-.flash--site-notice a:hover {
-    color:#b6d5eb
-}
-.flash--warning {
-    color:#333;
-    background:#f4f1d4
-}
-.flash--success {
-    color:#333;
-    background:#d2f0c0
-}
-a.interaction--fave {
-    color:#c4b246;
-}
-a.interaction--fave.active,a.interaction--fave:hover {
-    background:#c4b246;
-    color:#fff;
-}
-a.interaction--upvote {
-    color:#67af2b;
-}
-a.interaction--upvote.active,a.interaction--upvote:hover {
-    background:#67af2b;
-    color:#fff
-}
-a.interaction--downvote {
-    color:#cf0001
-}
-a.interaction--downvote.active,a.interaction--downvote:hover {
-    background:#cf0001;
-    color:#fff
-}
-a.interaction--comments {
-    color:#9273d0
-}
-a.interaction--comments:hover {
-    background:#9273d0;
-    color:#fff
-}
+
 .interaction--downvote.disabled,.interaction--downvote.disabled:hover {
     color:#dea7ac;
     background:#fbf8bf;/*#*/
 }
-.tag-info__image {
-    border:1px solid #d9e7f1;
-}
-.image-warning,#duplicate_check {
-    background:#f4f1d4;
-    border:1px solid #eee9bc;
-}
-.image-description {
-    background:#f3f3f3;
-    border:1px solid #d9e7f1
-}
-.dnp-warning {
-    border:3px solid #cf0001;
-    background:#f7d4d4
-}
-.dnp-warning a {
-    color:#cf0001;
-}
-.dnp-warning a:hover {
-    color:#ff0304
-}
-#burger,
-#burger a {
-    background:#f3f3f3;
-    color:#333;
-}
-#burger a:hover {
-    background:#62a7d9;
-    color:#fff
-}
 #container {
     background:#fcfaf8;/*#*/
-}
-#footer {
-    color:#999;
-    background:#fff
 }
 .alternating-color:nth-child(odd) {
     background:#fffbe7;/*#*/
 }
-.alternating-color:nth-child(even) {
-    background:#fff
-}
-.alternating-color:nth-child(odd).success,.alternating-color:nth-child(odd) .success {
-    background:#c8f1b0
-}
-.alternating-color:nth-child(even).success,.alternating-color:nth-child(even) .success {
-    background:#e3f6d9
-}
-.alternating-color:nth-child(even) .alternating-color:nth-child(odd).success,.alternating-color:nth-child(even) .alternating-color:nth-child(odd) .success {
-    background:#c8f1b0
-}
-.alternating-color:nth-child(odd).warning,.alternating-color:nth-child(odd) .warning {
-    background:#f1ebb3
-}
-.alternating-color:nth-child(even).warning,.alternating-color:nth-child(even) .warning {
-    background:#f3f0d0
-}
-.alternating-color:nth-child(even) .alternating-color:nth-child(odd).warning,.alternating-color:nth-child(even) .alternating-color:nth-child(odd) .warning {
-    background:#f1ebb3
-}
-.alternating-color:nth-child(odd).danger,.alternating-color:nth-child(odd) .danger {
-    background:#f3c8c2
-}
-.alternating-color:nth-child(even).danger,.alternating-color:nth-child(even) .danger {
-    background:#f0dcd9
-}
-.alternating-color:nth-child(even) .alternating-color:nth-child(odd).danger,.alternating-color:nth-child(even) .alternating-color:nth-child(odd) .danger {
-    background:#f3c8c2
-}
-
 .media-box {
     border:1px solid #fbf8bf;/*#*/
 }
 .media-box__header {
     background:#fbf8bf;/*#*/
     color:#333;
-}
-.media-box__overlay {
-    color:#fff;
-    background:#000;
-}
-del.differ {
-    background:#f0cfcb
-}
-ins.differ {
-    background:#d2f0c0
-}
-.tagsinput {
-    background:#fff;
-    border:1px solid #cdcdcd;
-}
-.not-valid {
-    background:#ebc0bb !important;
-    color:#cf0001 !important
 }
 .autocomplete__item {
     background:#f3bb72;/*#*/
@@ -641,69 +351,6 @@ ins.differ {
     background:#fff;
     color:#f3bb72;/*#*/
 }
-.tag {
-    border:1px solid;
-}
-.tag a {
-    color:inherit
-}
-.tag__count {
-    color:#333;
-}
-.tag__dropdown__link {
-    background-color:#f3f3f3;
-}
-.tag__dropdown__link:hover {
-    background-color:#e9e9e9
-}
-.tag {
-    background:#d0e29c;
-    border-color:#b3cf5d;
-    color:#6f8f0e
-}
-.tag.tag-system {
-    background:#c1d7e4;
-    border-color:#9dc1d4;
-    color:#267ead
-}
-.tag.tag-ns-spoiler {
-    background:#f4cdc2;
-    border-color:#eeb0a0;
-    color:#c24523
-}
-.tag.tag-ns-artist,.tag.tag-ns-editor,.tag.tag-ns-photographer,.tag[data-tag-slug="edit"],.tag[data-tag-slug="anonymous+artist"] {
-    background:#b9bce1;
-    border-color:#959ad1;
-    color:#393f85
-}
-.tag.tag-ns-oc,.tag[data-tag-slug="oc"] {
-    background:#dec5e2;
-    border-color:#cda7d3;
-    color:#9852a3
-}
-.tag[data-tag-slug="artist+needed"] {
-    background:#eeb1bc;
-    border-color:#e790a0;
-    color:#ad263f
-}
-.tag[data-tag-category="character"] {
-    background:#b9dce4;
-    border-color:#82c1ce;
-    color:#46a0b4
-}
-.tag[data-tag-category="episode"] {
-    background:#f4eb8f;
-    border-color:#e9d924;
-    color:#bdaf13
-}
-.quick-tag-table__tab>div {
-    border-right:1px solid #d9e7f1
-}
-span.quick-tag-table__tab-separator {
-    background:#fff;
-    border:1px solid #d9e7f1;
-}
-
 
 .header--secondary a[href='/galleries'],
 a.header__link[href^='/galleries/'],
@@ -790,7 +437,7 @@ div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/gal
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new.*") {
+@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new.*") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -822,7 +469,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
+@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications?/") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -847,7 +494,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries") {
+@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries?/") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
