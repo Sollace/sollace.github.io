@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org.*") {
 /*
 Jackybooru
 
@@ -363,17 +363,21 @@ label[for='topic_anonymous']::before,
 label[for='comment_anonymous']::before {
     display: inline-block;
 }
-a[href='/'].header__link.hide-mobile {
+
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
     font-size: 0;
     line-height: 0;
 }
-a[href='/'].header__link.hide-mobile::before {
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Jackybooru';
     font-size: 16px;
     padding: 0 12px;
     line-height: 36px;
 }
+
 label[for='topic_anonymous']::before,
 label[for='comment_anonymous']::before {
     content: 'Apple anonymously';
@@ -437,7 +441,7 @@ div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/gal
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new.*") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries/.+/new.*") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -469,7 +473,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications?/") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -494,7 +498,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries?/") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries.*") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -508,5 +512,13 @@ label[for="gallery_title"]::after {
     font-size: 14px;
     font-family: verdana,arial,helvetica,sans-serif;
     vertical-align: middle;
+}
+.block__content h3 {
+    font-size: 0;
+    vertical-align: top;
+}
+.block__content h3::after {
+    content: 'Search Orchards';
+    font-size: 1.17em;
 }
 }
