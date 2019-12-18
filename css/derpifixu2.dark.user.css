@@ -3,9 +3,7 @@ Derpifixu 2 (Dark Version)
 */
 
 @-moz-document
-  domain(derpibooru.org),
-  domain(derpiboo.ru),
-  domain(trixiebooru.org) {
+  regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
     .flex-row > a.header__link,
     .header {
       background: none;

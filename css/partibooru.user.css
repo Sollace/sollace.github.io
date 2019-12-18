@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
 /*
 Partibooru
 
@@ -785,7 +785,7 @@ a.header__link[href="/lists/my_comments"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,

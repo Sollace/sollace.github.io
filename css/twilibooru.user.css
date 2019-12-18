@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
 /*
 Twilibooru (Light)
 
@@ -778,7 +778,7 @@ div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/gal
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries/.+/new") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -810,7 +810,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -835,7 +835,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/galleries") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;

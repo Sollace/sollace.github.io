@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
 /*
 Dressabooru
 
@@ -762,7 +762,7 @@ a[href="https://www.patreon.com/derpibooru?ty=h"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/rules") {
+@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/rules") {
 .rule h2.important {
     font-size: 0;
 }

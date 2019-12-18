@@ -12,9 +12,7 @@ Update 3: Fixed being unable to read the labels on the tag editor groups.
 */
 
 @-moz-document
-  domain(derpibooru.org),
-  domain(derpiboo.ru),
-  domain(trixiebooru.org) {
+  regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
     /*Header Master*/
     .block__header, a.block__header--single-link {
       background: #6eaede;
