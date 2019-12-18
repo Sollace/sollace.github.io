@@ -1,28 +1,20 @@
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org.*") {
 /*
 Partibooru
 
 The Pinkie Pie theme for derpibooru.
 
 Update: Fixed the counter colours
+Update3: 
+  - Updated and fixed broken colours on inputs
+  - Some selectors not working when there is a trainling "/"
+  - Fixed changes due to site layout changes
+  - Cut down the size of the file by removing styles I don't modify.
+  - Added philomena to the whitelist.
 */
 
-mark {
-    background-color:#ff0;
-    color:#000
-}
-button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
-    outline:1px dotted ButtonText
-}
-fieldset {
-    border:1px solid silver;
-}
-body {
-    background-color:#fff;
-    color:#333;
-}
-pre {
-    background-color:#f3f3f3;
+optgroup {
+    background: #b0056a;
 }
 
 a,a:active,a:visited {
@@ -77,10 +69,6 @@ a:hover {
 hr {
     background:#d9e7f1
 }
-#error_explanation {
-    background:#f4f1d4;
-    box-shadow:0 0 5px #999
-}
 .rule h2 {
     background:#fff1f8;/*#*/
     border:1px solid #d9e7f1;
@@ -88,36 +76,6 @@ hr {
 .rule h2.important {
     background:#f0cfcb;
     border-color:#ebc0bb
-}
-blockquote {
-    border:1px dotted #333;
-    background-color:inherit
-}
-.spoiler span.imgspoiler,.spoiler-revealed span.imgspoiler,span.imgspoiler-revealed {
-    background:#e88585;
-}
-.spoiler {
-    background-color:#e88585;
-    color:#e88585
-}
-.spoiler a {
-    color:#e88585
-}
-.spoiler:hover,.spoiler-revealed {
-    background-color:#f7d4d4;
-    color:#333
-}
-.spoiler:hover a,.spoiler-revealed a {
-    color:#1e6696
-}
-.spoiler:hover a:hover,.spoiler-revealed a:hover {
-    color:#1e6696
-}
-.spoiler:hover span.imgspoiler,.spoiler-revealed span.imgspoiler {
-    background-color:#e88585
-}
-.spoiler:hover span.imgspoiler:hover,.spoiler:hover span.imgspoiler-revealed,.spoiler-revealed span.imgspoiler:hover,.spoiler-revealed span.imgspoiler-revealed {
-    background-color:#f7d4d4
 }
 .donate-button {
     background:0;
@@ -308,10 +266,12 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#68003d;/*#*/
 }
 
+.button, .communication__toolbar__button, .toggle-box + label,
 .button--state-primary {
     background-color:#edafcd;/*#*/
     border-color:#9cd4f5
 }
+.button:hover, .communication__toolbar__button:hover, .toggle-box + label:hover,
 .button--state-primary:hover {
     background-color:#ea9ac0;/*#*/
     border-color:#85caf3
@@ -785,7 +745,7 @@ a.header__link[href="/lists/my_comments"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/notifications") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
