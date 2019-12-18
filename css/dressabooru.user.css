@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org.*") {
 /*
 Dressabooru
 
@@ -7,24 +7,16 @@ A fabulous theme for derpibooru.
 Edit: Fixed some tags being fabulous without permission
 Edit: Fixed the notification icon's colours.
 Update2: Fixed the counter colours
+Update3: 
+  - Updated and fixed broken colours on inputs
+  - Some selectors not working when there is a trainling "/"
+  - Fixed changes due to site layout changes
+  - Cut down the size of the file by removing styles I don't modify.
+  - Added philomena to the whitelist.
 */
 
-mark {
-    background-color:#ff0;
-    color:#000
-}
-button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
-    outline:1px dotted ButtonText
-}
-fieldset {
-    border:1px solid silver;
-}
-body {
-    background-color:#fff;
-    color:#333;
-}
-pre {
-    background-color:#f3f3f3;
+optgroup {
+    background: #62c9f5;/*@*/
 }
 
 a,a:active,a:visited {
@@ -47,102 +39,42 @@ a:hover {
     background:#f9fbfa;/*#*/
 }
 .table>tbody>tr:nth-child(even) {
-    background:#fff
+    background:#fff;/***/
 }
 .table>tbody>tr:nth-child(odd).success,.table>tbody>tr:nth-child(odd) .success {
-    background:#c8f1b0
+    background:#c8f1b0;/***/
 }
 .table>tbody>tr:nth-child(even).success,.table>tbody>tr:nth-child(even) .success {
-    background:#e3f6d9
+    background:#e3f6d9;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).success,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .success {
-    background:#c8f1b0
+    background:#c8f1b0;/***/
 }
 .table>tbody>tr:nth-child(odd).warning,.table>tbody>tr:nth-child(odd) .warning {
-    background:#f1ebb3
+    background:#f1ebb3;/***/
 }
 .table>tbody>tr:nth-child(even).warning,.table>tbody>tr:nth-child(even) .warning {
-    background:#f3f0d0
+    background:#f3f0d0;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).warning,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .warning {
-    background:#f1ebb3
+    background:#f1ebb3;/***/
 }
 .table>tbody>tr:nth-child(odd).danger,.table>tbody>tr:nth-child(odd) .danger {
-    background:#f3c8c2
+    background:#f3c8c2;/***/
 }
 .table>tbody>tr:nth-child(even).danger,.table>tbody>tr:nth-child(even) .danger {
-    background:#f0dcd9
+    background:#f0dcd9;/***/
 }
 .table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd).danger,.table>tbody>tr:nth-child(even) .table>tbody>tr:nth-child(odd) .danger {
-    background:#f3c8c2
-}
-hr {
-    background:#d9e7f1
-}
-#error_explanation {
-    background:#f4f1d4;
-    box-shadow:0 0 5px #999
+    background:#f3c8c2;/***/
 }
 .rule h2 {
     background:#f9fbfa;/*#*/
     border:1px solid #d9e7f1;
 }
-.rule h2.important {
-    background:#f0cfcb;
-    border-color:#ebc0bb
-}
-blockquote {
-    border:1px dotted #333;
-    background-color:inherit
-}
-.spoiler span.imgspoiler,.spoiler-revealed span.imgspoiler,span.imgspoiler-revealed {
-    background:#e88585;
-}
-.spoiler {
-    background-color:#e88585;
-    color:#e88585
-}
-.spoiler a {
-    color:#e88585
-}
-.spoiler:hover,.spoiler-revealed {
-    background-color:#f7d4d4;
-    color:#333
-}
-.spoiler:hover a,.spoiler-revealed a {
-    color:#1e6696
-}
-.spoiler:hover a:hover,.spoiler-revealed a:hover {
-    color:#1e6696
-}
-.spoiler:hover span.imgspoiler,.spoiler-revealed span.imgspoiler {
-    background-color:#e88585
-}
-.spoiler:hover span.imgspoiler:hover,.spoiler:hover span.imgspoiler-revealed,.spoiler-revealed span.imgspoiler:hover,.spoiler-revealed span.imgspoiler-revealed {
-    background-color:#f7d4d4
-}
-.donate-button {
-    background:0;
-}
-.label--success {
-    background:#d2f0c0;
-    border:1px solid #bde9a3
-}
-.label--danger {
-    background:#f0cfcb;
-    border:1px solid #ebc0bb
-}
-.label--purple,.commit-sha span {
-    background:#e2a7df;
-    border:1px solid #c95ac3
-}
 .label--primary {
     background:#e9f0ee;/*#*/  
     border:1px solid #dbede8;/*#*/
-}
-.label--muted {
-    background:#e0e0e0;
-    border:1px solid #cfcfcf
 }
 i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background-image:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgdmlld0JveD0iMCAwIDE2IDE2IgogICBpZD0ic3ZnMiIKICAgdmVyc2lvbj0iMS4xIgogICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkxIHIxMzcyNSIKICAgc29kaXBvZGk6ZG9jbmFtZT0iaW5kZXguc3ZnIj4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGEyNCI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGRlZnMKICAgICBpZD0iZGVmczIyIiAvPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgYm9yZGVyb3BhY2l0eT0iMSIKICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIgogICAgIGdyaWR0b2xlcmFuY2U9IjEwIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTYwMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSI4MzciCiAgICAgaWQ9Im5hbWVkdmlldzIwIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTp6b29tPSIxOC45NTYwNTUiCiAgICAgaW5rc2NhcGU6Y3g9IjQuMjIxMDY4MyIKICAgICBpbmtzY2FwZTpjeT0iMy4wNDc1NDY0IgogICAgIGlua3NjYXBlOndpbmRvdy14PSItOCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iLTgiCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJzdmcyIiAvPgogIDxnCiAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lIgogICAgIGlkPSJnMzIzNCIKICAgICB0cmFuc2Zvcm09Im1hdHJpeCgwLjA1MzUxMjQ5LDAuMDM5NjU4NSwtMC4wMzk2NTg1LDAuMDUzNTEyNDksMTcuMDI5MDgsNC4yOTIwNDE2KSI+CiAgICA8ZwogICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2LjcyMDM5NCwtMTAuMDg2NzUxKSIKICAgICAgIGlkPSJnMzE4OSI+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiM3M2Q0ZmQ7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gLTUzLjAzMzAwOCwtMTAuODY4MDY3IC0yOS43OTk1LDczLjc0MTEzNSAzMC44MDk2NTIsNzMuMjM2MDYyIDI4LjI4NDI3MiwtNzMuMjM2MDYxIHoiCiAgICAgICAgIGlkPSJwYXRoMzE2MyIKICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICAgICAgc29kaXBvZGk6bm9kZXR5cGVzPSJjY2NjYyIgLz4KICAgICAgPHBhdGgKICAgICAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lO2ZpbGw6IzJkOTBiODtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSAtNTMuMDMxNSwtMTAuODc0NzQ1IC0xLjQ2ODc1LDMuNjI1IDAuMzc1LDY0LjM0Mzc1IC0xNS42MjUsLTI2LjU2MjUgLTEuNDM3NSwzLjUgMTYuMDkzNzUsMjcuMzQzNzUgLTI3LjE1NjI1LDAgLTAuNTkzNzUsMS41IDAuNjI1LDEuNSAyNy41MzEyNSwwIC0xNS4yODEyNSwyOS4wNjI1IDEuNSwzLjU5Mzc1IDE0LjQwNjI1LC0yNy40Mzc1IDAuMzc1LDYyLjU2MjQ5NSAxLjY1NjI1LDMuOTM3NSAxLjM0Mzc1LC0zLjQ2ODc1IC0wLjM3NSwtNjQuNDA2MjQ1IDE1LjI1LDI1LjkwNjI1IDEuMzc1LC0zLjU5Mzc1IC0xNS40MDYyNSwtMjYuMTg3NSAyNS41MzEyNSwwIDAuNTYyNSwtMS40Njg3NSAtMC41OTM3NSwtMS41MzEyNSAtMjUuMzc1LDAgMTQuNDY4NzUsLTI3LjQ2ODc1IC0xLjQ2ODc1LC0zLjY1NjI1IC0xNC40MDYyNSwyNy4zNzUgLTAuMzc1LC02NC42MjUgLTEuNTMxMjUsLTMuODQzNzUgeiIKICAgICAgICAgaWQ9InBhdGgzMTYzLTEiIC8+CiAgICAgIDxlbGxpcHNlCiAgICAgICAgIHN0eWxlPSJmaWxsOiM3M2Q0ZmQ7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOiMyZDkwYjg7c3Ryb2tlLXdpZHRoOjMuNTk5OTk5OTtzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIgogICAgICAgICBpZD0icGF0aDM5MzMiCiAgICAgICAgIGN4PSItNTMuMDMzMDA5IgogICAgICAgICBjeT0iNjIuMTE1NDU2IgogICAgICAgICByeD0iOS4wOTEzNzI1IgogICAgICAgICByeT0iMTQuODk5NzUiIC8+CiAgICA8L2c+CiAgICA8ZwogICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzkuNDA4MDE2LDg5Ljc4MjE3OCkiCiAgICAgICBpZD0iZzMxODktNyIKICAgICAgIHN0eWxlPSJkaXNwbGF5OmlubGluZSI+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiM3M2Q0ZmQ7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gLTUzLjAzMzAwOCwtMTAuODY4MDY3IC0yOS43OTk1LDczLjc0MTEzNSAzMC44MDk2NTIsNzMuMjM2MDYyIDI4LjI4NDI3MiwtNzMuMjM2MDYxIHoiCiAgICAgICAgIGlkPSJwYXRoMzE2My00IgogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjIiAvPgogICAgICA8cGF0aAogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7ZmlsbDojMmQ5MGI4O2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIgogICAgICAgICBkPSJtIC01My4wMzE1LC0xMC44NzQ3NDUgLTEuNDY4NzUsMy42MjUgMC4zNzUsNjQuMzQzNzUgLTE1LjYyNSwtMjYuNTYyNSAtMS40Mzc1LDMuNSAxNi4wOTM3NSwyNy4zNDM3NSAtMjcuMTU2MjUsMCAtMC41OTM3NSwxLjUgMC42MjUsMS41IDI3LjUzMTI1LDAgLTE1LjI4MTI1LDI5LjA2MjUgMS41LDMuNTkzNzUgMTQuNDA2MjUsLTI3LjQzNzUgMC4zNzUsNjIuNTYyNDk1IDEuNjU2MjUsMy45Mzc1IDEuMzQzNzUsLTMuNDY4NzUgLTAuMzc1LC02NC40MDYyNDUgMTUuMjUsMjUuOTA2MjUgMS4zNzUsLTMuNTkzNzUgLTE1LjQwNjI1LC0yNi4xODc1IDI1LjUzMTI1LDAgMC41NjI1LC0xLjQ2ODc1IC0wLjU5Mzc1LC0xLjUzMTI1IC0yNS4zNzUsMCAxNC40Njg3NSwtMjcuNDY4NzUgLTEuNDY4NzUsLTMuNjU2MjUgLTE0LjQwNjI1LDI3LjM3NSAtMC4zNzUsLTY0LjYyNSAtMS41MzEyNSwtMy44NDM3NSB6IgogICAgICAgICBpZD0icGF0aDMxNjMtMS0wIiAvPgogICAgICA8ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZmlsbDojNzNkNGZkO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTojMmQ5MGI4O3N0cm9rZS13aWR0aDozLjU5OTk5OTk7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgICAgaWQ9InBhdGgzOTMzLTkiCiAgICAgICAgIGN4PSItNTMuMDMzMDA5IgogICAgICAgICBjeT0iNjIuMTE1NDU2IgogICAgICAgICByeD0iOS4wOTEzNzI1IgogICAgICAgICByeT0iMTQuODk5NzUiIC8+CiAgICA8L2c+CiAgICA8ZwogICAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQ2Ljk3Mjg1NCwxMzguNjAwMikiCiAgICAgICBpZD0iZzMxODktNCIKICAgICAgIHN0eWxlPSJkaXNwbGF5OmlubGluZSI+CiAgICAgIDxwYXRoCiAgICAgICAgIHN0eWxlPSJmaWxsOiM3M2Q0ZmQ7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gLTUzLjAzMzAwOCwtMTAuODY4MDY3IC0yOS43OTk1LDczLjc0MTEzNSAzMC44MDk2NTIsNzMuMjM2MDYyIDI4LjI4NDI3MiwtNzMuMjM2MDYxIHoiCiAgICAgICAgIGlkPSJwYXRoMzE2My04IgogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzb2RpcG9kaTpub2RldHlwZXM9ImNjY2NjIiAvPgogICAgICA8cGF0aAogICAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmU7ZmlsbDojMmQ5MGI4O2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIgogICAgICAgICBkPSJtIC01My4wMzE1LC0xMC44NzQ3NDUgLTEuNDY4NzUsMy42MjUgMC4zNzUsNjQuMzQzNzUgLTE1LjYyNSwtMjYuNTYyNSAtMS40Mzc1LDMuNSAxNi4wOTM3NSwyNy4zNDM3NSAtMjcuMTU2MjUsMCAtMC41OTM3NSwxLjUgMC42MjUsMS41IDI3LjUzMTI1LDAgLTE1LjI4MTI1LDI5LjA2MjUgMS41LDMuNTkzNzUgMTQuNDA2MjUsLTI3LjQzNzUgMC4zNzUsNjIuNTYyNDk1IDEuNjU2MjUsMy45Mzc1IDEuMzQzNzUsLTMuNDY4NzUgLTAuMzc1LC02NC40MDYyNDUgMTUuMjUsMjUuOTA2MjUgMS4zNzUsLTMuNTkzNzUgLTE1LjQwNjI1LC0yNi4xODc1IDI1LjUzMTI1LDAgMC41NjI1LC0xLjQ2ODc1IC0wLjU5Mzc1LC0xLjUzMTI1IC0yNS4zNzUsMCAxNC40Njg3NSwtMjcuNDY4NzUgLTEuNDY4NzUsLTMuNjU2MjUgLTE0LjQwNjI1LDI3LjM3NSAtMC4zNzUsLTY0LjYyNSAtMS41MzEyNSwtMy44NDM3NSB6IgogICAgICAgICBpZD0icGF0aDMxNjMtMS04IiAvPgogICAgICA8ZWxsaXBzZQogICAgICAgICBzdHlsZT0iZmlsbDojNzNkNGZkO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTojMmQ5MGI4O3N0cm9rZS13aWR0aDozLjU5OTk5OTk7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgICAgaWQ9InBhdGgzOTMzLTIiCiAgICAgICAgIGN4PSItNTMuMDMzMDA5IgogICAgICAgICBjeT0iNjIuMTE1NDU2IgogICAgICAgICByeD0iOS4wOTEzNzI1IgogICAgICAgICByeT0iMTQuODk5NzUiIC8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K");
@@ -165,12 +97,6 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     color:#999;
 }
 
-.sparkline {
-    border-bottom:1px solid #77b3de
-}
-.sparkline .bar {
-    background-color:#9181c2;
-}
 .sparkline .hint:hover .bar {
     background-color:purple;/*#*/
 }
@@ -688,11 +614,12 @@ span.quick-tag-table__tab-separator {
     border:1px solid #d9e7f1;
 }
 
-a[href='/'].header__link.hide-mobile {
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
     font-size: 0;
     line-height: 0;
 }
-a[href='/'].header__link.hide-mobile::before {
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Dressabooru';
     font-size: 16px;
@@ -712,10 +639,10 @@ a[href='/'].header__link.hide-mobile::before {
     -webkit-animation: Fabulous alternate infinite 8s;
 }
 
-a[href="https://www.patreon.com/derpibooru?ty=h"] {
+a[href="https://www.patreon.com/derpibooru"] {
     font-size: 0;
 }
-a[href="https://www.patreon.com/derpibooru?ty=h"]::after {
+a[href="https://www.patreon.com/derpibooru"]::after {
     content: 'Become Fabulous';
     font-size: 13px;
 }
@@ -762,13 +689,16 @@ a[href="https://www.patreon.com/derpibooru?ty=h"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org)/rules") {
+@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/pages/rules.*") {
 .rule h2.important {
     font-size: 0;
 }
 .rule h2.important:after, .rule h2.important a {
-    content: ' Be fabulous to each other';
     font-size: 22px;
+}
+.rule h2.important:after {
+    content: 'Be fabulous to each other';
+    padding-left: 0.5em;
 }
 .rule h2.important ~ ul::after {
     content: 'Rarity is best pony';
