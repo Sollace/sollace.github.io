@@ -6,6 +6,8 @@ A Twilight Sparkle theme for derpibooru.
 
 Update 1: Added support for Derpibooru Extra Emoticons
 Update 2: Fixed the counter colours
+Update 3: Fixed text colour on tags
+Update 4: Added a custom site logo
 */
 
 mark {
@@ -631,12 +633,13 @@ ins.differ {
     background:#fff;
     color:#3D52A5;/*#*/
 }
-.tag {
-    border:1px solid;
-}
+
+/*======Default styling required for tags to appear correctly=========*/
 .tag a {
-    color:inherit
+    color: inherit;
 }
+/*============================*/
+
 .tag__count {
     color:#aaa;/*#*/
 }
@@ -790,6 +793,21 @@ div.dropdown.block__header__dropdown-tab a[href^="/galleries/"] i::after {
 #comment_emotes {
     border-color: #713584;
 }
+
+/* Site Logo */
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
+    font-size: 0;
+    line-height: 0;
+}
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
+    display: inline-block;
+    content: 'Sparklebooru';
+    font-size: 16px;
+    padding: 0 0 0 8px;
+    line-height: 36px;
+}
+
 }
 
 @-moz-document regexp("http?[s]://(philomena\\.|www\\\\.)?(derpi|trixie)boo(\\\\.ru|ru\\\\.org)/galleries/.+/new") {

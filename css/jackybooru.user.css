@@ -12,13 +12,17 @@ Update3:
   - Fixed changes due to site layout changes
   - Cut down the size of the file by removing styles I don't modify.
   - Added philomena to the whitelist.
+Update 4:
+  - Fixed text colour on tags
+  - Improved spacing on the site logo
+  - Fixed colour issues when hovering over the interaction buttons
 */
 
 optgroup {
     background: #f3bb72;/*@*/
 }
 
-a,a:active,a:visited {
+a, a:active, a:visited {
     color:#ec5b1c;/*#*/
 }
 a:hover {
@@ -326,6 +330,29 @@ span.header__link-user__dropdown-arrow:hover,.header__dropdown:hover span.header
     background-color:#f2ee97;/*#*/
 }
 
+/*=========Default styling required for interaction buttons to display corectly============*/
+a.interaction--fave.active,a.interaction--fave:hover {
+    background:#c4b246;
+    color:#fff;
+}
+a.interaction--upvote.active,a.interaction--upvote:hover {
+    background:#67af2b;
+    color:#fff
+}
+a.interaction--downvote.active,a.interaction--downvote:hover {
+    background:#cf0001;
+    color:#fff
+}
+a.interaction--comments:hover {
+    background:#9273d0;
+    color:#fff
+}
+.interaction--downvote.disabled,.interaction--downvote.disabled:hover {
+    color:#dea7ac;
+    background:#e9f0ee;/*#*/
+}
+/*=====================*/
+
 .interaction--downvote.disabled,.interaction--downvote.disabled:hover {
     color:#dea7ac;
     background:#fbf8bf;/*#*/
@@ -352,6 +379,12 @@ span.header__link-user__dropdown-arrow:hover,.header__dropdown:hover span.header
     color:#f3bb72;/*#*/
 }
 
+/*======Default styling required for tags to appear correctly=========*/
+.tag a {
+    color: inherit;
+}
+/*============================*/
+
 .header--secondary a[href='/galleries'],
 a.header__link[href^='/galleries/'],
 div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
@@ -362,20 +395,6 @@ label[for='comment_anonymous'] {
 label[for='topic_anonymous']::before,
 label[for='comment_anonymous']::before {
     display: inline-block;
-}
-
-
-a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
-    font-size: 0;
-    line-height: 0;
-}
-
-a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
-    display: inline-block;
-    content: 'Jackybooru';
-    font-size: 16px;
-    padding: 0 12px;
-    line-height: 36px;
 }
 
 label[for='topic_anonymous']::before,
@@ -438,6 +457,20 @@ div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/gal
     padding-left: 5px;
     padding-bottom: 5px;
     vertical-align: middle;
+}
+
+/* Site Logo */
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
+    font-size: 0;
+    line-height: 0;
+}
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
+    display: inline-block;
+    content: 'Jackybooru';
+    font-size: 16px;
+    padding: 0 0 0 8px;
+    line-height: 36px;
 }
 }
 

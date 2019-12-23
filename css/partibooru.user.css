@@ -11,6 +11,9 @@ Update3:
   - Fixed changes due to site layout changes
   - Cut down the size of the file by removing styles I don't modify.
   - Added philomena to the whitelist.
+Update 4:
+  - Fixed text colour on tags
+  - Imrpoved spacing on the site logo
 */
 
 optgroup {
@@ -587,61 +590,13 @@ ins.differ {
     background:#fff;
     color:#f850a6;/*#*/
 }
-.tag {
-    border:1px solid;
-}
+
+/*======Default styling required for tags to appear correctly=========*/
 .tag a {
-    color:inherit
+    color: inherit;
 }
-.tag__count {
-    color:#333;
-}
-.tag__dropdown__link {
-    background-color:#f3f3f3;
-}
-.tag__dropdown__link:hover {
-    background-color:#e9e9e9
-}
-.tag {
-    background:#d0e29c;
-    border-color:#b3cf5d;
-    color:#6f8f0e
-}
-.tag.tag-system {
-    background:#c1d7e4;
-    border-color:#9dc1d4;
-    color:#267ead
-}
-.tag.tag-ns-spoiler {
-    background:#f4cdc2;
-    border-color:#eeb0a0;
-    color:#c24523
-}
-.tag.tag-ns-artist,.tag.tag-ns-editor,.tag.tag-ns-photographer,.tag[data-tag-slug="edit"],.tag[data-tag-slug="anonymous+artist"] {
-    background:#b9bce1;
-    border-color:#959ad1;
-    color:#393f85
-}
-.tag.tag-ns-oc,.tag[data-tag-slug="oc"] {
-    background:#dec5e2;
-    border-color:#cda7d3;
-    color:#9852a3
-}
-.tag[data-tag-slug="artist+needed"] {
-    background:#eeb1bc;
-    border-color:#e790a0;
-    color:#ad263f
-}
-.tag[data-tag-category="character"] {
-    background:#b9dce4;
-    border-color:#82c1ce;
-    color:#46a0b4
-}
-.tag[data-tag-category="episode"] {
-    background:#f4eb8f;
-    border-color:#e9d924;
-    color:#bdaf13
-}
+/*============================*/
+
 .quick-tag-table__tab>div {
     border-right:1px solid #d9e7f1
 }
@@ -672,21 +627,6 @@ label[for='comment_anonymous']::before {
     font-size: 13px;
     pointer-events: none;
     vertical-align: middle;
-}
-
-
-
-a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
-    font-size: 0;
-    line-height: 0;
-}
-
-a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
-    display: inline-block;
-    content: 'Partibooru';
-    font-size: 16px;
-    padding: 0 12px;
-    line-height: 36px;
 }
 
 .block a[data-watch-icon] i.fa-bell-o::after {
@@ -745,6 +685,21 @@ a.header__link[href="/lists/my_comments"]::after {
 }
 .fa.fa-comments::before {
     content: '\f1fd';
+}
+
+
+/* Site Logo */
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile {
+    font-size: 0;
+    line-height: 0;
+}
+
+a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
+    display: inline-block;
+    content: 'Partibooru';
+    font-size: 16px;
+    padding: 0 0 0 8px;
+    line-height: 36px;
 }
 }
 
