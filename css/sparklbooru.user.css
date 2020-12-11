@@ -8,6 +8,7 @@ Update 1: Added support for Derpibooru Extra Emoticons
 Update 2: Fixed the counter colours
 Update 3: Fixed text colour on tags
 Update 4: Added a custom site logo
+Update 5: Updated for Derpibooru Dec2020
 */
 
 mark {
@@ -193,7 +194,9 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     border-bottom:1px solid #79398d;/*#*/
 }
 
-.block__header,a.block__header--single-item {
+.block__header,
+.block__header > span, .header__span,
+a.block__header--single-item {
     background:#1c2663;/*#*/  
     color:#fb71ba;/*#*/
 }

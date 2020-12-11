@@ -7,6 +7,7 @@ A Twilight Sparkle theme for derpibooru.
 Update: Fixed the counter colours
 Update 2: Fixed text colour on tags
 Update 3: Fixed the custom site logo
+Update 5: Updated for Derpibooru Dec2020
 */
 
 optgroup {
@@ -177,7 +178,9 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     border-bottom:1px solid #d9e7f1
 }
 
-.block__header,a.block__header--single-item {
+.block__header,
+.block__header > span, .header__span,
+a.block__header--single-item {
     background:#e3b5f3;/*#*/  
     color:#333
 }

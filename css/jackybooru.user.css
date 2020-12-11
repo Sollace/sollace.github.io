@@ -1,4 +1,3 @@
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org.*") {
 /*
 Jackybooru
 
@@ -16,6 +15,8 @@ Update 4:
   - Fixed text colour on tags
   - Improved spacing on the site logo
   - Fixed colour issues when hovering over the interaction buttons
+Update 5:
+  - Updated for Derpibooru Dec2020
 */
 
 optgroup {
@@ -147,7 +148,9 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
     background-color:#ca9756;/*#*/
 }
 
-.block__header,a.block__header--single-item {
+.block__header,
+.block__header > span, .header__span,
+a.block__header--single-item {
     background:#f7f3a5;/*#*/
     color:#333
 }
@@ -471,104 +474,4 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     font-size: 16px;
     padding: 0 0 0 8px;
     line-height: 36px;
-}
-}
-
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries/.+/new.*") {
-label[for="gallery_title"],
-label[for="gallery_thumbnail_id"],
-label[for="gallery_spoiler_warning"],
-label[for="gallery_description"],
-#content > h1 {
-    font-size: 0;
-}
-#content > h1::after {
-    content: 'Create yer Orchard';
-    font-size: 24px;
-}
-label[for="gallery_title"]::after,
-label[for="gallery_thumbnail_id"]::after,
-label[for="gallery_spoiler_warning"]::after,
-label[for="gallery_description"]::after {
-    font-size: 13px;
-}
-label[for="gallery_spoiler_warning"]::after {
-    content: "If ya goin' be having any lewd images in this here orchard ya better be warnin' folk";
-}
-label[for="gallery_description"]::after {
-    content: "Describe the orchard in a few words";
-}
-label[for="gallery_thumbnail_id"]::after {
-    content: "Set an existing image as the orchard cover";
-}
-label[for="gallery_title"]::after {
-    content: 'Choose a title displayed in orchard preview';
-}
-}
-
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
-#content > h1,
-#content > h1 + p,
-#content > h1 + p + p,
-#content > h1 ~ div + p {
-    font-size: 0;
-}
-#content > h1::after {
-    content: 'Apple Area';
-    font-size: 24px;
-}
-#content > h1 + p::after,
-#content > h1 + p + p::after,
-#content > h1 ~ div + p::after {
-    font-size: 13px;
-}
-#content > h1 + p::after {
-    content: 'You have no unread apples.';
-}
-#content > h1 + p + p::after,
-#content > h1 ~ div + p::after {
-    content: "To get apples on new comments and forum posts, click the 'Subscribe' button in the bar at the top of an image or forum topic. You'll get apples here for any new posts or comments.";
-}
-}
-
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries.*") {
-#content > h1, .block__header__title {
-    font-size: 0;
-    vertical-align: top;
-}
-#content > h1::after {
-    content: 'Orchards';
-    font-size: 24px;
-}
-.block__header__title::after {
-    content: 'Public Orchards';
-    font-size: 14px;
-    font-family: verdana,arial,helvetica,sans-serif;
-    vertical-align: middle;
-}
-.block__content h3 {
-    font-size: 0;
-    vertical-align: top;
-}
-.block__content h3::after {
-    content: 'Search Orchards';
-    font-size: 1.17em;
-}
-}
-
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries/[0-9]+") {
-.block__header--sub .block__header__title {
-    font-size: 0;
-    vertical-align: top;
-}
-#content > h1::after {
-    content: 'Bookshelves';
-    font-size: 24px;
-}
-.block__header--sub .block__header__title::after {
-    content: 'An orchard by';
-    font-size: 14px;
-    font-family: verdana,arial,helvetica,sans-serif;
-    vertical-align: middle;
-}
 }
