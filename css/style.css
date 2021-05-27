@@ -7,6 +7,7 @@ body.coloured {
   color: #fff;
   text-shadow: 0px 1px 3px #000;
 }
+
 .pinkie, .pinkie::before, .pinkie .splurge {
   position: fixed;
   top: 0px;
@@ -17,6 +18,13 @@ body.coloured {
 .pinkie::before, .pinkie .splurge {
   background: url(../images/pinkie.png) fixed no-repeat center center / auto 40%;
 }
+.pinka2 .pinkie::before, .pinka2 .pinkie .splurge {
+  background-image: url(https://derpicdn.net/img/view/2014/6/10/649480.png);
+}
+.pinka3 .pinkie::before, .pinka3 .pinkie .splurge {
+  background-image: url(https://derpicdn.net/img/view/2020/3/29/2308561.png);
+}
+
 .pinkie::before {
   content: '';
   opacity: 0.3;
@@ -28,6 +36,9 @@ body.coloured {
   animation: fillup 10s ease-out 0s forwards;
   top: 70%;
   bottom: 30%;
+}
+.pinka1 .pinkie .splurge {
+  filter: invert();
 }
 
 @-webkit-keyframes fillup { from { top: 70%; } to { top: 35%; } }
