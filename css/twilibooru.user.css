@@ -1,4 +1,4 @@
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art).*") {
 /*
 Twilibooru (Light)
 
@@ -8,7 +8,88 @@ Update: Fixed the counter colours
 Update 2: Fixed text colour on tags
 Update 3: Fixed the custom site logo
 Update 5: Updated for Derpibooru Dec2020
+Update 6:
+  - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
+  - Fixed sparklines on profiles
 */
+
+
+
+/*Resets*/
+body {
+    color: #333;
+}
+.flash--site-notice {
+    background:#1e537a;
+    color:#fff
+}
+.flash--site-notice a,
+.flash--site-notice a:active,
+.flash--site-notice a:visited {
+    color:#e4eef5;
+    text-decoration:underline
+}
+.flash--site-notice a:hover {
+    color:#b6d5eb
+}
+.flash--warning {
+    background:#f4f1d4;
+    color:#333
+}
+.flash--success {
+    background:#d2f0c0;
+    color:#333
+}
+#container {
+    background: #fcfaf8;
+}
+body,
+.block__content, .block__tab,
+#footer,
+.table > thead > tr {
+    background: #fff;
+}
+.table, .table > tbody {
+    border-color: #d9e7f1;
+}
+
+.block__content:first-child {
+    border-top: 1px solid #d9e7f1;
+}
+.block__content, .block__tab {
+    border-left: 1px solid #d9e7f1;
+    border-right: 1px solid #d9e7f1;
+}
+.block__content:last-child, .block__tab:not(.hidden) {
+    border-bottom: 1px solid #d9e7f1;
+}
+.alternating-color:nth-child(2n) {
+    background: #fff;
+}
+.header__input, .header__input:focus {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+}
+.block--fixed {
+    background: #fff;
+    border: 1px solid #d9e7f1;
+}
+.block--warning {
+    background: #f4f1d4;
+    border-color: #eee9bc;
+}
+.block--success {
+    background: #d2f0c0;
+    border-color: #bde9a3;
+}
+
+.button, .toggle-box + label, .input {
+    color: #333;
+}
+.input {
+    border-color: #bbb;
+}
+/*end resets*/
 
 optgroup {
     background: #9858ae;/*#*/
@@ -155,11 +236,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
 .sparkline {
     border-bottom:1px solid #77b3de
 }
-.sparkline .bar {
-    background-color:#77b3de;
+.barline__bar {
+    fill: #77b3de;
 }
-.sparkline .hint:hover .bar {
-    background-color:purple;/*#*/
+.barline__bar:hover {
+    fill: purple;/*#*/
 }
 [data-hint]::after {
     background:rgba(0,0,0,0.5);
@@ -726,7 +807,7 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries/.+/new") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries/.+/new") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -758,7 +839,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -783,7 +864,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?(derpi|trixie)booru.org/galleries(/|)") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries(/|)") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -809,7 +890,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries/[0-9]+") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries/[0-9]+") {
 .block__header--sub .block__header__title {
     font-size: 0;
     vertical-align: top;

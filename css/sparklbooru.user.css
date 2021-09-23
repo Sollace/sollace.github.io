@@ -1,4 +1,4 @@
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art).*") {
 /*
 Twilibooru (Dark)
 
@@ -9,6 +9,9 @@ Update 2: Fixed the counter colours
 Update 3: Fixed text colour on tags
 Update 4: Added a custom site logo
 Update 5: Updated for Derpibooru Dec2020
+Update 6:
+  - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
+  - Fixed sparklines on profiles
 */
 
 mark {
@@ -171,11 +174,11 @@ i.favicon-home, .badge img[alt^="Derpibooru Premium"] {
 .sparkline {
     border-bottom:1px solid #a443c3;/*#*/
 }
-.sparkline .bar {
-    background-color:#a443c3;/*#*/  
+.barline__bar {
+    fill: #a443c3;/*#*/  
 }
-.sparkline .hint:hover .bar {
-    background-color:blue
+.barline__bar:hover {
+    fill: blue;
 }
 [data-hint]::after {
     background:rgba(0,0,0,0.5);
@@ -810,10 +813,9 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     padding: 0 0 0 8px;
     line-height: 36px;
 }
-
 }
 
-@-moz-document regexp("http?[s]://(philomena\\.|www\\\\.)?(derpi|trixie)boo(\\\\.ru|ru\\\\.org)/galleries/.+/new") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries/.+/new") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -845,7 +847,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/notifications.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -870,7 +872,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries(/|)") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries(/|)") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -896,7 +898,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?(derpi|trixie)booru.org/galleries/[0-9]+") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art)/galleries/[0-9]+") {
 .block__header--sub .block__header__title {
     font-size: 0;
     vertical-align: top;
