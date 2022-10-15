@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --background-color: #313131;
+    --column-background: #2f2222;
+    --foreground-color: var(--background-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background:
+      url('../images/plaster.png'),
+      url('../images/dash woah.svg') no-repeat bottom left 25vw / cover var(--background-color) fixed;
+    color: #000;
+    font-family: Verdana,sans-serif;
+    line-height: 1.5em;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+  color: #46a4c4;
+}
+
+.right {
+  float: right;
+}
+img.right {
+  max-width: 30%;
+}
+
+.left {
+  float: left;
+}
+img.left {
+  max-width: 30%;
+}
+
+.stick-top {
+  position: sticky;
+  top: 0;
+}
+
+.body-container {
+  text-align: left;
+  width: 90vw;
+  max-width: 900px;
+  padding: 20px 15px;
+  background: var(--column-background);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: auto;
+}
+
+nav.body-container {
+  height: max-content;
+  overflow: hidden;
+  margin: 0;
+  background: var(--foreground-color);
+  padding: 0;
+  flex-direction: row;
+  gap: 0;
+}
+nav > * {
+  padding: 11px;
+  transition: background 1s ease;
+}
+nav > *:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+nav img {
+  max-height: 30px;
+}
+
+nav spacer {
+  flex-grow: 1;
+  pointer-events: none;
+}
+
+.card {
+  --card-padding: 20px;
+  background: var(--foreground-color);
+  border-radius: 13px;
+  padding: var(--card-padding);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+  color: #a5a5a8;
+}
+
+.card h2 {
+  padding: 10px;
+  margin: calc(0 - var(--card-padding));
+  margin-bottom: 15px;
+  border-bottom: solid 1px #4e4e53;
+}
+
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.links a {
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+  gap: 9px;
+  padding: 9px;
+  background: #504050;
+  padding: 4px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: inherit;
+  line-height: 16px;
+  transition: background ease 1s;
+}
+.links a:hover {
+  background: #607060;
+}
+.links img {
+  max-height: 26px;
+}
