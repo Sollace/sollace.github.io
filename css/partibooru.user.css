@@ -19,6 +19,9 @@ Update 5:
 Update 6:
   - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
   - Fixed sparklines on profiles
+Update 7:
+  - Fixed color of the search buttons
+  - Fixed incorrect padding on site title
 */
 
 
@@ -489,11 +492,11 @@ select.header__input,select.header__input:focus {
 select.header__input:hover,select.header__input:focus:hover {
     background-color:#e92d8d; /*#*/
 }
-a.header__search__button,button.header__search__button {
+.header__search__button,.header__search__button:visited {
     background:#f850a6; /*#*/
-    color:#fff;
+    color:#fff !important;
 }
-a.header__search__button:hover,button.header__search__button:hover {
+.header__search__button:hover,.header__search__button:visited:hover {
     background:#e92d8d; /*#*/
 }
 span.header__link-user__dropdown-arrow {
@@ -783,7 +786,6 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Partibooru';
     font-size: 16px;
-    padding: 0 0 0 8px;
     line-height: 36px;
 }
 }

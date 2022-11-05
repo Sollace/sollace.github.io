@@ -12,6 +12,9 @@ Update 5: Updated for Derpibooru Dec2020
 Update 6:
   - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
   - Fixed sparklines on profiles
+Update 7:
+  - Fixed color of the search buttons
+  - Fixed incorrect padding on site title
 */
 
 mark {
@@ -453,16 +456,16 @@ select.header__input,select.header__input:focus {
 select.header__input:hover,select.header__input:focus:hover {
     background-color:#233784;/*#*/
 }
-a.header__search__button,button.header__search__button {
+.header__search__button,.header__search__button:visited {
     background:#3D52A5;/*#*/
-    color:#fff;/*$*/
+    color:#fff !important;
 }
-a.header__search__button:hover,button.header__search__button:hover {
+.header__search__button:hover,.header__search__button:visited:hover {
     background:#233784;/*#*/
 }
 span.header__link-user__dropdown-arrow {
     background:linear-gradient(45deg,transparent 50%,#fff 50%) calc(100% - 5px) 12px/5px 5px no-repeat,linear-gradient(135deg,#fff 50%,transparent 50%) calc(100%) 12px/5px 5px no-repeat;
-    background-color:#273671;/*#*/  
+    background-color:#273671;/*#*/
 }
 span.header__link-user__dropdown-arrow:hover,.header__dropdown:hover span.header__link-user__dropdown-arrow {
     background-color:#1B2963;/*#*/
@@ -810,7 +813,6 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Sparklebooru';
     font-size: 16px;
-    padding: 0 0 0 8px;
     line-height: 36px;
 }
 }

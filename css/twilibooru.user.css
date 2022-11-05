@@ -11,6 +11,10 @@ Update 5: Updated for Derpibooru Dec2020
 Update 6:
   - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
   - Fixed sparklines on profiles
+Update 7:
+  - Fixed color of the search buttons
+  - Fixed incorrect padding on site title
+  - Fixed incorrect font weight on the Bookshelves link
 */
 
 
@@ -513,11 +517,11 @@ select.header__input,select.header__input:focus {
 select.header__input:hover,select.header__input:focus:hover {
     background-color:#d199e6;/*#*/
 }
-a.header__search__button,button.header__search__button {
+.header__search__button,.header__search__button:visited {
     background:#daa3ed;/*#*/
-    color:#fff;
+    color:#fff !important;
 }
-a.header__search__button:hover,button.header__search__button:hover {
+.header__search__button:hover,.header__search__button:visited:hover {
     background:#d199e6;/*#*/
 }
 span.header__link-user__dropdown-arrow {
@@ -714,7 +718,7 @@ span.quick-tag-table__tab-separator {
     border:1px solid #d9e7f1;
 }
 
-
+/* Commending */
 .header--secondary a[href='/galleries'],
 a.header__link[href^='/galleries/'],
 div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
@@ -731,6 +735,8 @@ label[for='comment_anonymous']::before {
     content: 'Pancake anonymously';
     font-size: 13px;
 }
+
+/* Bookshelves */
 .block__header > a[href^='/galleries/'],
 div.dropdown.block__header__dropdown-tab > a[href='#'],
 a.header__link[href^='/galleries']{
@@ -742,10 +748,12 @@ div.dropdown.block__header__dropdown-tab > a[href='#'] > i.fa.fa-image::after {
     font-size: 14px;
     font-weight: bold;
     font-family: verdana,arial,helvetica,sans-serif;
+    font-weight: 36;
     padding-left: 5px;
     margin-bottom: -15px;
     vertical-align: middle;
 }
+
 .block__header > a[href^='/galleries/'] i,
 a.header__link[href^='/galleries'] i,
 div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"] i,
@@ -802,7 +810,6 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Twilibooru';
     font-size: 16px;
-    padding: 0 0 0 8px;
     line-height: 36px;
 }
 }

@@ -21,6 +21,10 @@ Update 5:
 Update 6:
   - Added support for Ponybooru, Twibooru, Manebooru, and Ponerpics
   - Fixed sparklines on profiles
+Update 7:
+  - Fixed color of the search buttons
+  - Fixed incorrect padding on site title
+  - Fixed incorrect font weight on the Orchards link
 */
 
 
@@ -390,11 +394,12 @@ select.header__input,select.header__input:focus {
 select.header__input:hover,select.header__input:focus:hover {
     background-color:#f5b15a; /*#*/
 }
-a.header__search__button,button.header__search__button {
+
+.header__search__button, .header__search__button:visited {
     background:#f3bb72; /*#*/
-    color:#fff;
+    color:#fff !important;
 }
-a.header__search__button:hover,button.header__search__button:hover {
+.header__search__button:hover, .header__search__button:visited:hover {
     background:#f5b15a; /*#*/
 }
 span.header__link-user__dropdown-arrow {
@@ -469,6 +474,7 @@ a.interaction--comments:hover {
 }
 /*============================*/
 
+/* Commending */
 .header--secondary a[href='/galleries'],
 a.header__link[href^='/galleries/'],
 div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"],
@@ -486,6 +492,8 @@ label[for='comment_anonymous']::before {
     content: 'Apple anonymously';
     font-size: 13px;
 }
+
+/* Orchards */
 .block__header > a[href^='/galleries/'],
 div.dropdown.block__header__dropdown-tab > a[href='#'],
 a.header__link[href^='/galleries']{
@@ -501,6 +509,7 @@ div.dropdown.block__header__dropdown-tab > a[href='#'] > i.fa.fa-image::after {
     margin-bottom: -15px;
     vertical-align: middle;
 }
+
 .block__header > a[href^='/galleries/'] i,
 a.header__link[href^='/galleries'] i,
 div.dropdown.block__header__dropdown-tab a.block__list__link.primary[href^="/galleries/"] i,
@@ -518,6 +527,7 @@ a.header__link[href^='/galleries'] i::after {
     content: 'Orchards';
     font-size: 16px;
     font-family: verdana,arial,helvetica,sans-serif;
+    font-weight: 36;
     padding-left: 10px;
     vertical-align: middle;
 }
@@ -553,7 +563,6 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
     display: inline-block;
     content: 'Jackybooru';
     font-size: 16px;
-    padding: 0 0 0 8px;
     line-height: 36px;
 }
 }
