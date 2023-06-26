@@ -1,0 +1,213 @@
+
+* {
+    --level-background: #FFF;
+    --cell-size: 20px;
+    --cell-fill: #EEE;
+    --level-grid-width: 1px;
+    --level-grid-color: #AAB;
+    --hud-background: #444;
+    --hud-outline: #333;
+}
+body.dark-mode * {
+    --level-background: #666;
+    --cell-fill: #333;
+    --level-grid-color: #222;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--level-background);
+    font-family: arial;
+    overflow: hidden;
+    --level-scale: 1;
+}
+
+body {
+    display: flex;
+}
+
+level {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), auto);
+    background: var(--level-background);
+    flex-grow: 1;
+    flex-wrap: wrap;
+    overflow: hidden;
+    translate: var(--level-dragging-x, 0) var(--level-dragging-y, 0);
+    scale: var(--level-scale, 1);
+    transition: scale 0.5s ease, translate 0.1s linear;
+}
+level.repainting {
+    transition: none;
+}
+
+level cell, level enemy {
+    position: relative;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: dotted var(--level-grid-width) var(--level-grid-color);
+    color: var(--level-grid-color);
+    text-align: center;
+    border-radius: 3px;
+    line-height: var(--cell-size);
+}
+level enemy {
+    position: absolute;
+    background: red;
+    grid-column: calc(var(--column) - var(--x) + 1);
+    grid-row: calc(var(--row) - var(--y) + 1);
+}
+
+level cell:hover {
+    outline: solid 3px #00F4;
+    z-index: 30;
+}
+level cell:not([data-opened="true"]) {
+    box-shadow: inset -1px -2px 0 #666;
+    background: var(--cell-fill);
+    border-style: solid;
+}
+level cell[data-count][data-opened="true"]:not([data-count="0"])::before {
+    content: attr(data-count);
+}
+level cell[data-count][data-opened="true"][data-count="1"]::before {
+    opacity: calc(5 / 8);
+}
+level cell[data-count][data-opened="true"][data-count="2"]::before {
+    opacity: calc(6 / 8);
+}
+level cell[data-count][data-opened="true"][data-count="3"]::before {
+    opacity: calc(7 / 8);
+}
+level cell[data-count][data-opened="true"][data-count="5"]::before {
+    color: #CAB;
+}
+level cell[data-count][data-opened="true"][data-count="6"]::before {
+    color: #F99;
+}
+level cell[data-count][data-opened="true"][data-count="7"]::before {
+    color: #F77;
+}
+level cell[data-count][data-opened="true"][data-count="8"]::before {
+    color: #F00;
+}
+
+
+level cell[data-opened="true"][data-bomb="true"]::before {
+    content: '💣' !important;
+    font-family: times;
+    color: red;
+}
+level cell[data-opened="true"][data-bomb="true"]::after {
+    position: absolute;
+    left: 0;
+    content: '🔥' !important;
+    font-family: times;
+    color: red;
+}
+level cell[data-flag="true"]:not([data-opened="true"])::before {
+    content: '🚩';
+}
+
+hud {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--hud-background);
+    border: solid 2px var(--hud-outline);
+    border-radius: 7px;
+    box-shadow: inset 0px 0px 0px 2px #CCC8;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 1.5em;
+    transition: opacity 0.6s;
+}
+hud:not(.auto-size) {
+    width: 200px;
+}
+hud:hover:not(.auto-size):not(.center) {
+    opacity: 0.6;
+}
+[data-click] {
+    cursor: pointer;
+}
+
+hud.top {
+    top: 0;
+}
+hud.left {
+    left: 0;
+}
+hud.right {
+    right: 0;
+}
+hud.bottom {
+    bottom: 0;
+}
+
+hud entry[data-game-attribute]:not([no-label])::before {
+    content: attr(data-game-attribute) ': ';
+}
+
+popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #0004;
+}
+
+hud.center {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+
+particle {
+    --particle-animation-duration: 3s;
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF0;
+    text-shadow: 0 0 3px #000;
+    pointer-events: none;
+    animation: 
+        0.5s linear infinite alternate floating,
+        var(--particle-animation-duration) linear infinite running rising;
+}
+
+@keyframes floating {
+    from {
+        translate: -5px 0;
+    }
+    to {
+        translate: 5px 0;
+    }
+}
+
+@keyframes rising {
+    from {
+        opacity: 1;
+        margin-top: 0;
+    }
+    to {
+        opacity: 0;
+        margin-top: -240px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.red {
+    color: red !important;
+}
