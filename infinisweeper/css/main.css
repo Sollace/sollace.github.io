@@ -95,13 +95,16 @@ level cell[data-count][data-opened="true"][data-count="8"]::before {
     color: #F00;
 }
 
+level.developer-mode cell[data-count]::before {
+    content: attr(data-count);
+}
 
-level cell[data-opened="true"][data-bomb="true"]::before {
+level cell[data-bomb="true"]::before {
     content: '💣' !important;
     font-family: times;
     color: red;
 }
-level cell[data-opened="true"][data-bomb="true"]::after {
+level cell[data-bomb="true"]::after {
     position: absolute;
     left: 0;
     content: '🔥' !important;
@@ -110,6 +113,10 @@ level cell[data-opened="true"][data-bomb="true"]::after {
 }
 level cell[data-flag="true"]:not([data-opened="true"])::before {
     content: '🚩';
+}
+
+level.developer-mode cell[data-loaded="false"] {
+    opacity: 0.5;
 }
 
 hud {

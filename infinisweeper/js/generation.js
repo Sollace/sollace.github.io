@@ -28,8 +28,11 @@ function countOrCreateNeighbour(x, y) {
 function generateBomb(x, y, properties) {
     if (!properties.loaded) {
         properties.loaded = true;
-        properties.bomb = Math.random() <= gameState.getBombRate();
+        if (!properties.opened) {
+          properties.bomb = Math.random() <= gameState.getBombRate();
+        }
         storeCell(x, y, properties);
+        repaintCell(getIndex(x, y));
     }
     return !!properties.bomb;
 }

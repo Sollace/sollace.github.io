@@ -1,6 +1,7 @@
 
 const gameState = {
     viewport: { x: 0, y: 0, w: 0, h: 0, zoom: 1 },
+    developerMode: false,
     focusedCell: null,
     bombRate: 0.23,
     getBombRate() {
@@ -57,6 +58,7 @@ function resizeViewPort(level, columns, rows) {
 }
 
 function writeViewportToElement(level) {
+    level.classList.toggle('developer-mode', gameState.developerMode);
     level.style.setProperty('--columns', gameState.viewport.w);
     level.style.setProperty('--rows', gameState.viewport.h);
     level.style.setProperty('--x', gameState.viewport.x);
@@ -72,7 +74,8 @@ function createCellHtml(cell) {
         data-opened="${cell.state.opened}"
         data-count="${cell.state.count || 0}"
         data-flag="${cell.state.flagged || false}"
-        ${cell.state.opened && cell.state.bomb ? 'data-bomb="true"' : ''}></cell>`;
+        data-loaded="${cell.state.loaded || false}"
+        ${(cell.state.opened || gameState.developerMode) && cell.state.bomb ? 'data-bomb="true"' : ''}></cell>`;
 }
 
 function createEnemyHtml(enemy) {
