@@ -42,7 +42,7 @@ setInterval(() => {
     }
 }, 100);
 
-resetCallbacks.push(() => enemies.clear());
+resetCallbacks.push(() => enemies = []);
 
 const directions = {};
 function initDirection(name, vector, prev, next) {

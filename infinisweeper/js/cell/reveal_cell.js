@@ -9,7 +9,7 @@ function openSingleCell(target) {
         cell.loaded = true;
     } else {
         if (Math.random() <= 0.03) {
-            //spawnEnemy(cell.globalX, cell.globalY, 'snake');
+            spawnEnemy(cell.globalX, cell.globalY, 'snake');
         }
     }
 
