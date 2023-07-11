@@ -19,6 +19,15 @@ const gameState = {
     }
 };
 
+function isVisible(globalX, globalY) {
+    return between(globalX, gameState.viewport.x, gameState.viewport.x + gameState.viewport.w)
+        && between(globalY, gameState.viewport.y, gameState.viewport.y + gameState.viewport.h);
+}
+
+function between(value, min, max) {
+    return value >= min && value <= max;
+}
+
 function buildLevel(level) {
     const properties = getGlobalCssProperties(level);
     resizeViewPort(level, properties.width, properties.height);
@@ -82,8 +91,15 @@ function createEnemyHtml(enemy) {
     return `<enemy data-index="${enemy.index}" style="--column:${enemy.x};--row:${enemy.y}"></enemy>`;
 }
 
-function repaintCell(index) {
-    pendingUpdates[index] = index;
+function repaintCell(index, now) {
+    if (now) {
+        const element = document.querySelector(`level cell[data-index="${index}"]`);
+        if (element) {
+            element.outerHTML = createCellHtml(getCellAttributes(index));
+        }
+    } else {
+        pendingUpdates[index] = index;
+    }
 }
 
 function createArray(len, factory) {
@@ -96,13 +112,7 @@ let pendingUpdates = {};
 setInterval(() => {
     const updatedThisFrame = Object.values(pendingUpdates);
     pendingUpdates = {};
-
-    updatedThisFrame.forEach(index => {
-        const element = document.querySelector(`level cell[data-index="${index}"]`);
-        if (element) {
-            element.outerHTML = createCellHtml(getCellAttributes(index));
-        }
-    });
+    updatedThisFrame.forEach(index => repaintCell(index, 1));
 }, 150);
 
 resetCallbacks.push(() => buildLevel(document.querySelector('level')));

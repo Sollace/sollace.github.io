@@ -11,11 +11,16 @@ function spawnEnemy(x, y, type) {
 }
 
 function moveEnemy(enemy, changeX, changeY) {
-    const element = document.querySelector(`enemy[data-index="${enemy.index}"]`);
+    let element = document.querySelector(`enemy[data-index="${enemy.index}"]`);
     enemy.x += changeX;
     enemy.y += changeY;
+    enemy.index = getIndex(enemy.x, enemy.y);
     enemy.dirty = true;
     element.outerHTML = createEnemyHtml(enemy);
+    document.querySelector(`enemy[data-index="${enemy.index}"]`).classList.toggle('hidden', !isVisible(
+        enemy.x,
+        enemy.y
+    ));
 }
 
 setInterval(() => {
@@ -72,11 +77,15 @@ enemyTypes.snake = {
         }
         const vector = directions[enemy.direction].vector;
 
+        if (!isVisible(enemy.x + vector[0], enemy.y + vector[1])) {
+            vector[0] *= -1;
+            vector[1] *= -1;
+        }
+
         moveEnemy(enemy, vector[0], vector[1]);
 
-        const index = getIndex(enemy.x, enemy.y);
-        const cell = getCellAttributes(index);
-        let count = generateNeighbours(cell);
+        const cell = getOrCreateCellData(enemy.x, enemy.y);
+        let count = generateCellNeighbours(enemy.x, enemy.y, cell);
         if (count >= 0) {
             cell.count = count;
         } else if (enemy.health-- <= 0) {
@@ -86,7 +95,9 @@ enemyTypes.snake = {
 
         cell.opened = true;
         cell.loaded = true;
-        storeCell(cell.globalX, cell.globalY, cell);
-        repaintCell(index);
+        storeCell(enemy.x, enemy.y, cell);
+        if (isVisible(enemy.x, enemy.y)) {
+            repaintCell(enemy.index);
+        }
     }
 }
