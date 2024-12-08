@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           Make Badges Wrap Again
 @namespace      sollace
-@version        1.0.0
+@version        1.1.0
 @description    Simple userstyle that returns the old memey greatness that were derpibooru badges.
 @author         Sollace
 ==/UserStyle== */
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).org.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai).*") {
     .badges .dropdown,
     .badges .dropdown__content,
     .badges .badges {
