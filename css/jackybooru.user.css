@@ -1,4 +1,4 @@
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics).(org|art).*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai).*") {
 /*
 Jackybooru
 
@@ -25,6 +25,8 @@ Update 7:
   - Fixed color of the search buttons
   - Fixed incorrect padding on site title
   - Fixed incorrect font weight on the Orchards link
+Update 8:
+  - Added support for tantabus.ai
 */
 
 
@@ -567,7 +569,7 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics).(org|art)/galleries/.+/new.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics|tantabus).(org|art|ai)/galleries/.+/new.*") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -599,7 +601,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics).(org|art)/notifications.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics|tantabus).(org|art|ai)/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -624,7 +626,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics).(org|art)/galleries.*") {
+@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics|tantabus).(org|art|ai)/galleries.*") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -649,7 +651,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics).(org|art)/galleries/[0-9]+") {
+@-moz-document regexp("http?[s]://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics|tantabus).(org|art|ai)/galleries/[0-9]+") {
 .block__header--sub .block__header__title {
     font-size: 0;
     vertical-align: top;
