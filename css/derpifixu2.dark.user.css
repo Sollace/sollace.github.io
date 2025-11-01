@@ -1,6 +1,10 @@
-/*
-Derpifixu 2 (Dark Version)
-*/
+/* ==UserStyle==
+@name           Derpifixu2 (Dark version)
+@namespace      sollace
+@version        2.0.0
+@description    Mixed in some elements from the old style and fixed the main things that bug me.
+@author         Sollace
+==/UserStyle== */
 
 @-moz-document
   regexp("http?[s]://(philomena\.|www\\.)?(derpi|trixie)boo(\\.ru|ru\\.org).*") {
