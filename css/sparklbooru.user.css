@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Twilibooru (Dark)
 @namespace      sollace
-@version        1.8.0
+@version        1.9.0
 @description    A Twilight Sparkle theme for derpibooru.
 @author         Sollace
 ==/UserStyle== */
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai).*") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai).*") {
 /*
 Twilibooru (Dark)
 
@@ -826,7 +826,7 @@ a[href='/'] .fa__text.hide-limited-desktop.hide-mobile::before {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai)/galleries/.+/new") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai)/galleries/.+/new") {
 label[for="gallery_title"],
 label[for="gallery_thumbnail_id"],
 label[for="gallery_spoiler_warning"],
@@ -858,7 +858,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai)/notifications.*") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai)/notifications.*") {
 #content > h1,
 #content > h1 + p,
 #content > h1 + p + p,
@@ -883,7 +883,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai)/galleries(/|)") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai)/galleries(/|)") {
 #content > h1, .block__header__title {
     font-size: 0;
     vertical-align: top;
@@ -909,7 +909,7 @@ label[for="gallery_title"]::after {
 }
 }
 
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai)/galleries/[0-9]+") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai)/galleries/[0-9]+") {
 .block__header--sub .block__header__title {
     font-size: 0;
     vertical-align: top;

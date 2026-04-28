@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Dressabooru
 @namespace      sollace
-@version        1.8.0
+@version        1.10.0
 @description    A fabulous theme for derpibooru.
 @author         Sollace
 ==/UserStyle== */
-@-moz-document regexp("https://(philomena.|www.)?((derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(org|art|ai).*") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai).*") {
 /*
 Dressabooru
 
@@ -735,7 +735,7 @@ a[href="https://www.patreon.com/derpibooru"]::after {
 }
 }
 
-@-moz-document regexp("http?[s]://(philomena.|www.)?((derpi|trixie|pony|twi)booru|ponerpics|tantabus).(org|art|ai)/pages/rules.*") {
+@-moz-document regexp("https?://(philomena.|www.)?(fillypilled|(derpi|trixie|pony|twi|mane)booru|ponerpics|tantabus).(xyz|org|art|ai)/pages/rules.*") {
 .rule h2.important {
     font-size: 0;
 }
